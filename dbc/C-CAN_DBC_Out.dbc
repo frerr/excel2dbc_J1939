@@ -1,0 +1,957 @@
+VERSION ""
+
+
+NS_ : 
+        NS_DESC_
+            CM_
+            BA_DEF_
+            BA_
+            VAL_
+            CAT_DEF_
+            CAT_
+            FILTER
+            BA_DEF_DEF_
+            EV_DATA_
+            ENVVAR_DATA_
+            SGTYPE_
+            SGTYPE_VAL_
+            BA_DEF_SGTYPE_
+            BA_SGTYPE_
+            SIG_TYPE_REF_
+            VAL_TABLE_
+            SIG_GROUP_
+            SIG_VALTYPE_
+            SIGTYPE_VALTYPE_
+            BO_TX_BU_
+            BA_DEF_REL_
+            BA_REL_
+            BA_DEF_DEF_REL_
+            BU_SG_REL_
+            BU_EV_REL_
+            BU_BO_REL_
+            SG_MUL_VAL_
+
+BS_:
+
+BU_: EECU VGT TCU SCU ABS/EBS/ESC Retarder EPS/HSCU IC DCDC BBM Display AEBS LKA ELC/ECAS HVAP VECU HCU BCM TPMS PAC ACM AVM CIOM LSCU EPB FNOx RNox ACU HCCB SCM ADCU UQS ROBD T-BOX Charge RKE DFD/DFMS LDWS FCWS BSD DCM VDR/BeiDou EMCU MCU(Axle) BMS CDC PEPS YRS Exhaust Ret. Engine Ret. AFS CCM CVG EAC SAS Tacho IVI ATC DST Camera Infotainment EHPS Gateway(INC) HOD BCA rADCU rEHPS 
+
+
+BO_ 2365547678 AutoDrive_ADCU: 8 ADCU
+ SG_ CRC8 : 0|8@1+ (1.0,0.0) [0.0|255.0]  "" SCU,ABS/EBS/ESC,VECU,BCM,EHPS,BCA,rEHPS
+ SG_ Counter : 8|4@1+ (1.0,0.0) [0.0|15.0]  "" SCU,ABS/EBS/ESC,VECU,BCM,EHPS,BCA,rEHPS
+ SG_ AD Mode Enable PS : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" SCU,ABS/EBS/ESC,VECU,BCM,EHPS,BCA,rEHPS
+ SG_ AD Mode Engage PS : 20|2@1+ (1.0,0.0) [0.0|3.0]  "" SCU,ABS/EBS/ESC,VECU,BCM,EHPS,BCA,rEHPS
+
+BO_ 2365553054 ADU_PSControlRequest_ADCU: 8 ADCU
+ SG_ SW Angle Request PS lower byte : 0|8@1+ (0.1,0.0) [-12.8|12.7]  "deg" EHPS,rEHPS
+ SG_ SW Angle Request PS upper byte : 8|8@1+ (0.1,0.0) [-12.8|12.7]  "deg" EHPS,rEHPS
+ SG_ SW Angle Request Valid PS : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" EHPS,rEHPS
+ SG_ Message Counter : 48|8@1+ (1.0,0.0) [0.0|255.0]  "" EHPS,rEHPS
+ SG_ Data Sum : 56|8@1+ (1.0,0.0) [0.0|255.0]  "" EHPS,rEHPS
+
+BO_ 2566879763 ECUControlInformation1_EHPS: 8 EHPS
+ SG_ Current SW Angle PS lower byte : 0|8@1+ (0.1,0.0) [-12.8|12.7]  "deg" ADCU
+ SG_ Current SW Angle PS upper byte : 8|8@1+ (0.1,0.0) [-12.8|12.7]  "" ADCU
+ SG_ Current SW Speed PS lower byte : 16|8@1+ (0.1,0.0) [-2000.0|2000.0]  "deg/s" ADCU
+ SG_ Current SW Speed PS upper byte : 24|8@1+ (0.1,0.0) [-2000.0|2000.0]  "" ADCU
+ SG_ Current SW Angle Valid PS : 32|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Current SW Speed Valid PS : 34|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Message Counter : 48|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Data Sum : 56|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+
+BO_ 2566880019 ECUControlInformation2_EHPS: 8 EHPS
+ SG_ Current Driver Torque PS lower byte : 0|8@1+ (0.01,0.0) [-20.0|20.0]  "Nm" ADCU
+ SG_ Current Driver Torque PS upper byte : 8|8@1+ (0.01,0.0) [-20.0|20.0]  "" ADCU
+ SG_ Current Driver Torque Valid PS : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Steering Override PS : 24|4@1+ (1.0,0.0) [0.0|15.0]  "" ADCU
+ SG_ Steering Override Valid PS : 28|4@1+ (1.0,0.0) [0.0|15.0]  "" ADCU
+ SG_ Steering System Status PS : 32|4@1+ (1.0,0.0) [0.0|15.0]  "" ADCU
+ SG_ State Voltage PS : 36|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ State Temperature PS : 38|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Steering Error Event1 Active PS : 40|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Steering Error Event1 PS : 42|6@1+ (1.0,0.0) [0.0|63.0]  "" ADCU
+ SG_ Message Counter : 48|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Data Sum : 56|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+
+BO_ 2566880275 ECUControlInformation3_EHPS: 8 EHPS
+ SG_ Steering System AD Mode State PS : 0|3@1+ (1.0,0.0) [0.0|7.0]  "" ADCU
+ SG_ Output limitation : 7|1@1+ (1.0,0.0) [0.0|1.0]  "" ADCU
+ SG_ Current consumption : 8|8@1+ (0.2,0.0) [0.0|50.0]  "A" ADCU
+ SG_ Boost curve torque lower byte : 16|8@1+ (0.01,0.0) [-1.28|1.27]  "Nm" ADCU
+ SG_ Boost curve torque upper byte : 24|8@1+ (0.01,0.0) [-1.28|1.27]  "Nm" ADCU
+ SG_ Total torque lower byte : 32|8@1+ (0.01,0.0) [-1.28|1.27]  "Nm" ADCU
+ SG_ Total torque upper byte : 40|8@1+ (0.01,0.0) [-1.28|1.27]  "Nm" ADCU
+ SG_ Message Counter : 48|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Data Sum : 56|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+
+BO_ 2566880531 ECUControlInformation4_EHPS: 8 EHPS
+ SG_ AHPS Failure code lower byte : 0|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ AHPS Failure code upper byte : 8|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ ECU Temperature PS : 16|8@1+ (1.0,0.0) [0.0|200.0]  "deg" ADCU
+ SG_ Inverter Temperature PS (estimated) : 24|8@1+ (1.0,0.0) [0.0|200.0]  "deg" ADCU
+ SG_ AHPS supply voltage PS : 32|8@1+ (0.2,0.0) [0.0|50.0]  "V" ADCU
+ SG_ AHPS torque limitation ratio PS : 40|8@1+ (1.0,0.0) [0.0|100.0]  "%" ADCU
+ SG_ Message Counter : 48|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Data Sum : 56|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+
+BO_ 2566842927 VW_ECAS: 8 ELC/ECAS
+ SG_ AxleWeight : 8|16@1+ (0.5,0.0) [0.0|32127.5]  "kg" ADCU
+
+BO_ 2566834759 DM1_CIOM: 8 
+ SG_ ProtectLampSt  : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ AmberWarnLamp  : 2|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ RedStopLampSt  : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ MalfunctionIndLampSt : 6|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ SPN_LeastByteSPN : 16|8@1+ (1.0,0.0) [0.0|255.0]  "" 
+ SG_ SPN_SecondByteSPN : 24|8@1+ (1.0,0.0) [0.0|255.0]  "" 
+ SG_ FMI : 32|5@1+ (1.0,0.0) [0.0|31.0]  "" 
+ SG_ SPN_3MostSignificantBits : 37|3@1+ (1.0,0.0) [0.0|7.0]  "" 
+ SG_ OC_CurrCount : 40|7@1+ (1.0,0.0) [0.0|127.0]  "" 
+ SG_ SPNConversionMethod : 47|1@1+ (1.0,0.0) [0.0|1.0]  "" 
+
+BO_ 2565872907 SAS_EBS: 8 ABS/EBS/ESC
+ SG_ SteeringWheelAngle : 0|16@1+ (0.0009765625,-31.374) [-31.374|31.374]  "rad" ADCU,EHPS
+ SG_ SteeringWheelAngleRangeCounter : 16|6@1+ (1.0,0.0) [-32.0|29.0]  "range" ADCU,EHPS
+ SG_ Steering Wheel Angle Range Counter Type : 22|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,EHPS
+ SG_ Steering Wheel Angle Range : 32|16@1+ (0.0009765625,-31.374) [-31.374|31.374]  "" ADCU,EHPS
+ SG_ Steering Angle Sensor Active Mode : 48|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,EHPS
+ SG_ Steering Angle Sensor Calibrated : 50|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,EHPS
+ SG_ Message Counter : 56|4@1+ (1.0,0.0) [0.0|15.0]  "" ADCU,EHPS
+ SG_ Message Checksum : 60|4@1+ (1.0,0.0) [0.0|15.0]  "" ADCU,EHPS
+
+BO_ 2566878475 PBF_EBS: 8 ABS/EBS/ESC
+ SG_ CRC8 : 0|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Counter : 8|4@1+ (1.0,0.0) [0.0|15.0]  "" ADCU
+ SG_ BrakingSystemStatus : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Braking System AD Mode State 1 : 24|3@1+ (1.0,0.0) [0.0|7.0]  "" ADCU
+ SG_ Braking Error Event Active 1 : 30|1@1+ (1.0,0.0) [0.0|1.0]  "" ADCU
+ SG_ Braking Error Event 1 : 32|4@1+ (1.0,0.0) [0.0|15.0]  "" ADCU
+
+BO_ 2298375691 HRW_EBS: 8 BCA
+
+BO_ 2565865739 EBC1_EBS: 8 BCA
+ SG_ ASR Engine Control Active : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ ASR Brake Control Active : 2|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ Anti-lock braking (ABS) Active : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ Brake Pedal Position : 8|8@1+ (0.4,0.0) [0.0|100.0]  "%" VECU,BCM,ADCU,rADCU
+ SG_ ABS Offroad Switch : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ ASR Offroad Switch : 18|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ ASR "hill holder" Switch : 20|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ Traction Control Override Switch : 22|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ Accelerator Interlock Switch : 24|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ Engine Derate Switch : 26|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ Auxiliary Engine Shutdown Switch : 28|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ Remote Accelerator Enable Switch : 30|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ Engine Retarder Selection : 32|8@1+ (0.4,0.0) [0.0|100.0]  "%" VECU,BCM,ADCU,rADCU
+ SG_ ABS Fully Operational : 40|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ EBS Red Warning Lamp State : 42|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ ABS/EBS Amber Warning State(powered vehicle) : 44|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ ATC/ASR Lamp State : 46|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,ADCU,rADCU
+ SG_ Source Address of Controlling Device for Brake Control : 48|8@1+ (1.0,0.0) [0.0|255.0]  "" VECU,BCM,ADCU,rADCU
+
+BO_ 2566767627 EBC5_EBS: 8 BCA
+ SG_ Brake Temperature Warning : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,ADCU,rADCU
+ SG_ Halt Brake Mode : 2|3@1+ (1.0,0.0) [0.0|7.0]  "" AEBS,ADCU,rADCU
+ SG_ Hill Holder Mode : 5|3@1+ (1.0,0.0) [0.0|7.0]  "" AEBS,ADCU,rADCU
+ SG_ Foundation Brake Use : 8|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,ADCU,rADCU
+ SG_ XBR System State : 10|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,ADCU,rADCU
+ SG_ XBR Active Control Mode : 12|4@1+ (1.0,0.0) [0.0|7.0]  "" AEBS,ADCU,rADCU
+ SG_ XBR Acceleration Limit : 16|8@1+ (0.1,-12.5) [-12.5|12.5]  "m/s²" AEBS,ADCU,rADCU
+ SG_ Parking Brake Actuator Fully Activated : 24|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,ADCU,rADCU
+ SG_ Emergency Braking Active : 26|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,ADCU,rADCU
+ SG_ Railroad Mode : 28|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,ADCU,rADCU
+
+BO_ 2349075358 XBR_ADCU: 8 ADCU
+ SG_ ExternalAccDemand : 0|16@1+ (0.0004883,-15.687) [-15.687|15.687]  "m/s²" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ XBREBIMode : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ XBRPriority : 18|2@1+ (1.0,0.0) [0.0|3.0]  "" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ XBRCtrlMode : 20|2@1+ (1.0,0.0) [0.0|3.0]  "" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ XBRurgency : 24|8@1+ (0.4,0.0) [0.0|100.0]  "%" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ Msgcounter : 56|4@1+ (1.0,0.0) [0.0|15.0]  "count" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ Msgchecksum : 60|4@1+ (1.0,0.0) [0.0|15.0]  "count" ABS/EBS/ESC,VECU,BCM,BCA
+
+BO_ 2565867787 VDC2_EBS: 8 ABS/EBS/ESC
+ SG_ Longitudinal Acceleration : 56|8@1+ (0.1,-12.5) [-12.5|12.5]  "m/s²" ADCU
+
+BO_ 2566811659 CVW_EBS: 8 ABS/EBS/ESC
+ SG_ Gross Combination Weight : 16|16@1+ (10.0,0.0) [0.0|642550.0]  "kg" ADCU
+
+BO_ 2566878878 Warning_EBS_ADCU: 8 ADCU
+ SG_ Brake Temp Warning PS : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" ABS/EBS/ESC,BCA
+ SG_ Brake Pressure Warning PS : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" ABS/EBS/ESC,BCA
+
+BO_ 2566827275 EBC3_EBS: 8 ABS/EBS/ESC
+ SG_ Brake Application Pressure High Range, Front Axle, Left Wheel : 0|8@1+ (5.0,0.0) [0.0|1250.0]  "kPa" ADCU
+ SG_ Brake Application Pressure High Range, Front Axle, Right Wheel : 8|8@1+ (5.0,0.0) [0.0|1250.0]  "kPa" ADCU
+ SG_ Brake Application Pressure High Range, Rear Axle #1, Left Wheel : 16|8@1+ (5.0,0.0) [0.0|1250.0]  "kPa" ADCU
+ SG_ Brake Application Pressure High Range, Rear Axle #1, Right Wheel : 24|8@1+ (5.0,0.0) [0.0|1250.0]  "kPa" ADCU
+ SG_ Brake Application Pressure High Range, Rear Axle #2, Left Wheel : 32|8@1+ (5.0,0.0) [0.0|1250.0]  "kPa" ADCU
+ SG_ Brake Application Pressure High Range, Rear Axle #2, Right Wheel : 40|8@1+ (5.0,0.0) [0.0|1250.0]  "kPa" ADCU
+ SG_ Brake Application Pressure High Range, Rear Axle #3, Left Wheel : 48|8@1+ (5.0,0.0) [0.0|1250.0]  "kPa" ADCU
+ SG_ Brake Application Pressure High Range, Rear Axle #3, Right Wheel : 56|8@1+ (5.0,0.0) [0.0|1250.0]  "kPa" ADCU
+
+BO_ 2566831883 EBC2_EBS: 8 ABS/EBS/ESC
+ SG_ Front Axle Speed : 0|16@1+ (0.00390625,0.0) [0.0|250.996]  "km/h" ADCU,EHPS
+ SG_ Relative Speed; Front Axle, Left Wheel : 16|8@1+ (0.0625,-7.8125) [-7.8125|7.8125]  "km/h" ADCU,EHPS
+ SG_ Relative Speed; Front Axle, Right Wheel : 24|8@1+ (0.0625,-7.8125) [-7.8125|7.8125]  "km/h" ADCU,EHPS
+ SG_ Relative Speed; Rear Axle #1, Left Wheel : 32|8@1+ (0.0625,-7.8125) [-7.8125|7.8125]  "km/h" ADCU,EHPS
+ SG_ Relative Speed; Rear Axle #1, Right Wheel : 40|8@1+ (0.0625,-7.8125) [-7.8125|7.8125]  "km/h" ADCU,EHPS
+ SG_ Relative Speed; Rear Axle #2, Left Wheel : 48|8@1+ (0.0625,-7.8125) [-7.8125|7.8125]  "km/h" ADCU,EHPS
+ SG_ Relative Speed; Rear Axle #2, Right Wheel : 56|8@1+ (0.0625,-7.8125) [-7.8125|7.8125]  "km/h" ADCU,EHPS
+
+BO_ 2566834699 DM1_EBS: 8 ABS/EBS/ESC
+ SG_ ProtectLampSt  : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ AmberWarnLamp  : 2|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ RedStopLampSt  : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ MalfunctionIndLampSt : 6|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ SPN_LeastByteSPN : 16|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ SPN_SecondByteSPN : 24|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ FMI : 32|5@1+ (1.0,0.0) [0.0|31.0]  "" ADCU
+ SG_ SPN_3MostSignificantBits : 37|3@1+ (1.0,0.0) [0.0|7.0]  "" ADCU
+ SG_ OC_CurrCount : 40|7@1+ (1.0,0.0) [0.0|127.0]  "" ADCU
+ SG_ SPNConversionMethod : 47|1@1+ (1.0,0.0) [0.0|1.0]  "" ADCU
+
+BO_ 2565492894 EPBC1_ADCU: 8 ADCU
+ SG_ Tractor Brake Control
+ : 16|8@1+ (0.4,0.0) [0.0|100.0]  "%" EPB
+ SG_ Trailer Brake  Control
+ : 24|8@1+ (0.4,0.0) [0.0|100.0]  "%" EPB
+ SG_ Parking Brake Control
+ : 32|8@1+ (0.4,0.0) [0.0|100.0]  "%" EPB
+ SG_ Autohold Brake switch : 40|2@1+ (1.0,0.0) [0.0|3.0]  "" EPB
+ SG_ Counter : 56|4@1+ (1.0,0.0) [0.0|15.0]  "" EPB
+ SG_ CSUM : 60|4@1+ (1.0,0.0) [0.0|15.0]  "" EPB
+
+BO_ 2565492956 EPBC1_rADCU: 8 rADCU
+ SG_ Tractor Brake Control
+ : 16|8@1+ (0.4,0.0) [0.0|100.0]  "%" EPB
+ SG_ Trailer Brake  Control
+ : 24|8@1+ (0.4,0.0) [0.0|100.0]  "%" EPB
+ SG_ Parking Brake Control
+ : 32|8@1+ (0.4,0.0) [0.0|100.8]  "%" EPB
+ SG_ Autohold Brake switch : 40|2@1+ (1.0,0.0) [0.0|3.0]  "" EPB
+ SG_ Counter : 56|4@1+ (1.0,0.0) [0.0|15.0]  "" EPB
+ SG_ CSUM : 60|4@1+ (1.0,0.0) [0.0|15.0]  "" EPB
+
+BO_ 2566787664 EPBS1_EPB: 8 EPB
+ SG_ EPB_ParkBraStatus : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ AH_ParkActive : 2|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ AH_BraStatus : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ ErrCode : 8|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU,rADCU
+ SG_ ChildLockActive : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ LowPreRelParkLimit : 18|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ IdepedtBraOly  : 24|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ PrakBraForcTest : 26|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ EPB_BraSwitch : 30|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ ParkBtSwitch : 32|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ RelsBtSwitch : 34|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ AHBtSwitch : 36|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ IdepedtBtSwitch  : 38|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ ForcTestBtSwitch : 40|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ WarmingStatus : 44|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,rADCU
+ SG_ EPB AD Mode State SS
+ : 56|4@1+ (1.0,0.0) [0.0|15.0]  "" ADCU,rADCU
+ SG_ EPB AD Mode State PS
+ : 60|4@1+ (1.0,0.0) [0.0|15.0]  "" ADCU,rADCU
+
+BO_ 2566834768 DM1_EPB: 8 EPB
+ SG_ ProtectLampSt  : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ AmberWarnLampSt : 2|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ RedStopLampSt  : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ MalfunctionIndLampSt : 6|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ SPN_LeastByteSPN : 16|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ SPN_SecondByteSPN : 24|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ FMI : 32|5@1+ (1.0,0.0) [0.0|31.0]  "" ADCU
+ SG_ SPN_3MostSignificantBits : 37|3@1+ (1.0,0.0) [0.0|7.0]  "" ADCU
+ SG_ OC_CurrCount : 40|7@1+ (1.0,0.0) [0.0|127.0]  "" ADCU
+ SG_ SPNConversionMethod : 47|1@1+ (1.0,0.0) [0.0|1.0]  "" ADCU
+
+BO_ 2566875186 State_BCM: 8 BCM
+ SG_ PowerOnSwitchOfADCU : 14|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ ActiveSwitchOfADCU : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+
+BO_ 2566838539 AUXIO_EBS: 8 ABS/EBS/ESC
+ SG_ Auxiliary I/O#4 . Trailer Brake status : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Auxiliary I/O #3 : 2|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Auxiliary I/O #2 : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Auxiliary I/O #1 : 6|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Trailer Control Pressure : 8|8@1+ (5.0,0.0) [0.0|1250.0]  "Kpa" 
+ SG_ Auxiliary I/O#8 – Door Switch : 10|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Auxiliary I/O#7 – Low pressure switch : 12|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Auxiliary I/O#6 – Rear axle 1 : 14|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Auxiliary I/O#5 – Parking Brake switch : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Auxiliary I/O#9 – EBI switch : 30|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+
+BO_ 2633935883 EBC4_EBS: 8 ABS/EBS/ESC
+ SG_ Brake Lining Remaining, Front Axle Left : 0|8@1+ (0.4,0.0) [0.0|100.0]  "%" 
+ SG_ Brake Lining Remaining, Front Axle Right : 8|8@1+ (0.4,0.0) [0.0|100.0]  "%" 
+ SG_ Brake Lining Remaining, Rear Axle #1 Left : 16|8@1+ (0.4,0.0) [0.0|100.0]  "%" 
+ SG_ Brake Lining Remaining, Rear Axle #1 Right : 24|8@1+ (0.4,0.0) [0.0|100.0]  "%" 
+ SG_ Brake Lining Remaining, Rear Axle #2 Left : 32|8@1+ (0.4,0.0) [0.0|100.0]  "%" 
+ SG_ Brake Lining Remaining, Rear Axle #2 Right : 40|8@1+ (0.4,0.0) [0.0|100.0]  "%" 
+ SG_ Brake Lining Remaining, Rear Axle #3 Left : 48|8@1+ (0.4,0.0) [0.0|100.0]  "%" 
+ SG_ Brake Lining Remaining, Rear Axle #3 Right : 56|8@1+ (0.4,0.0) [0.0|100.0]  "%" 
+
+BO_ 2566806063 ASC1_ECAS: 8 ELC/ECAS
+ SG_ Nominallevelfrontaxle : 0|4@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Nominallevelrearaxle : 4|4@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Below nominal level front axle : 8|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Below nominal level rear axle : 10|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Above nominal level front axle : 12|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Above nominal level rear axle : 14|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Lowering control mode front axle : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Lowering control mode rear axle : 18|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Lifting control mode front axle : 20|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Lifting control mode rear axle : 22|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Kneeling information : 24|4@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Level control mode : 28|4@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Security device : 32|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Vehicle motion inhibit : 34|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Door release : 36|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Lift axle 1 position : 38|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Front axle in bumper range : 40|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Rear axle in bumper range : 42|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Lift axle 2 position : 46|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Suspension Remote control : 48|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Suspension Remote control : 50|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Suspension control refusal information : 56|4@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+
+BO_ 2566805807 ASC3_ECAS: 8 ELC/ECAS
+ SG_ Relative Level Front Axle Left : 0|8@1+ (0.1,-3200.0) [-3200.0|3225.5]  "mm" ADCU
+ SG_ Relative Level Front Axle Right : 16|8@1+ (0.1,-3200.0) [-3200.0|3225.5]  "mm" ADCU
+ SG_ Relative Level Rear Axle Left : 32|8@1+ (0.1,-3200.0) [-3200.0|3225.5]  "mm" ADCU
+ SG_ Relative Level Rear Axle Right : 48|8@1+ (0.1,-3200.0) [-3200.0|3225.5]  "mm" ADCU
+
+BO_ 2566805551 ASC4_ECAS: 8 ELC/ECAS
+ SG_ BellowPressureFrontAxleLeft : 0|8@1+ (0.1,0.0) [0.0|6425.5]  "kPa" ADCU
+ SG_ BellowPressureFrontAxleRight : 16|8@1+ (0.1,0.0) [0.0|6425.5]  "kPa" ADCU
+ SG_ BellowPressureRearAxleLeft : 32|8@1+ (0.1,0.0) [0.0|6425.5]  "kPa" ADCU
+ SG_ BellowPressureRearAxleRight : 48|8@1+ (0.1,0.0) [0.0|6425.5]  "kPa" ADCU
+
+BO_ 2566803211 VDC1_EBS: 8 ABS/EBS/ESC
+ SG_ VDC Lamp State : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,VECU,ADCU
+ SG_ VDC Fully operational : 2|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,VECU,ADCU
+ SG_ VDC Brake Light Request : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,VECU,ADCU
+ SG_ ROP Engine Control Active : 8|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,VECU,ADCU
+ SG_ ROP Brake Control Active : 10|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,VECU,ADCU
+ SG_ YC Engine Control Active : 12|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,VECU,ADCU
+ SG_ YC Brake Control Active : 14|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS,VECU,ADCU
+
+CM_ " ";
+CM_ SG_ 2365547678 CRC8 "校验";
+CM_ SG_ 2365547678 Counter "计数";
+CM_ SG_ 2365547678 AD Mode Enable PS "允许进入自动驾驶模式(ADU_PS)";
+CM_ SG_ 2365547678 AD Mode Engage PS "请求进入自动驾驶模式(ADU_PS)";
+CM_ SG_ 2365553054 SW Angle Request PS lower byte "";
+CM_ SG_ 2365553054 SW Angle Request PS upper byte "";
+CM_ SG_ 2365553054 SW Angle Request Valid PS "";
+CM_ SG_ 2365553054 Message Counter "";
+CM_ SG_ 2365553054 Data Sum "";
+CM_ SG_ 2566879763 Current SW Angle PS lower byte "";
+CM_ SG_ 2566879763 Current SW Angle PS upper byte "";
+CM_ SG_ 2566879763 Current SW Speed PS lower byte "";
+CM_ SG_ 2566879763 Current SW Speed PS upper byte "";
+CM_ SG_ 2566879763 Current SW Angle Valid PS "";
+CM_ SG_ 2566879763 Current SW Speed Valid PS "";
+CM_ SG_ 2566879763 Message Counter "";
+CM_ SG_ 2566879763 Data Sum "";
+CM_ SG_ 2566880019 Current Driver Torque PS lower byte "";
+CM_ SG_ 2566880019 Current Driver Torque PS upper byte "";
+CM_ SG_ 2566880019 Current Driver Torque Valid PS "";
+CM_ SG_ 2566880019 Steering Override PS "";
+CM_ SG_ 2566880019 Steering Override Valid PS "";
+CM_ SG_ 2566880019 Steering System Status PS "";
+CM_ SG_ 2566880019 State Voltage PS "";
+CM_ SG_ 2566880019 State Temperature PS "";
+CM_ SG_ 2566880019 Steering Error Event1 Active PS "";
+CM_ SG_ 2566880019 Steering Error Event1 PS "";
+CM_ SG_ 2566880019 Message Counter "";
+CM_ SG_ 2566880019 Data Sum "";
+CM_ SG_ 2566880275 Steering System AD Mode State PS "";
+CM_ SG_ 2566880275 Output limitation "";
+CM_ SG_ 2566880275 Current consumption "";
+CM_ SG_ 2566880275 Boost curve torque lower byte "";
+CM_ SG_ 2566880275 Boost curve torque upper byte "";
+CM_ SG_ 2566880275 Total torque lower byte "";
+CM_ SG_ 2566880275 Total torque upper byte "";
+CM_ SG_ 2566880275 Message Counter "";
+CM_ SG_ 2566880275 Data Sum "";
+CM_ SG_ 2566880531 AHPS Failure code lower byte "";
+CM_ SG_ 2566880531 AHPS Failure code upper byte "";
+CM_ SG_ 2566880531 ECU Temperature PS "";
+CM_ SG_ 2566880531 Inverter Temperature PS (estimated) "";
+CM_ SG_ 2566880531 AHPS supply voltage PS "";
+CM_ SG_ 2566880531 AHPS torque limitation ratio PS "";
+CM_ SG_ 2566880531 Message Counter "";
+CM_ SG_ 2566880531 Data Sum "";
+CM_ SG_ 2566842927 AxleWeight "轴荷";
+CM_ SG_ 2566834759 ProtectLampSt  "";
+CM_ SG_ 2566834759 AmberWarnLamp  "";
+CM_ SG_ 2566834759 RedStopLampSt  "";
+CM_ SG_ 2566834759 MalfunctionIndLampSt "";
+CM_ SG_ 2566834759 SPN_LeastByteSPN "";
+CM_ SG_ 2566834759 SPN_SecondByteSPN "";
+CM_ SG_ 2566834759 FMI "";
+CM_ SG_ 2566834759 SPN_3MostSignificantBits "";
+CM_ SG_ 2566834759 OC_CurrCount "";
+CM_ SG_ 2566834759 SPNConversionMethod "";
+CM_ SG_ 2565872907 SteeringWheelAngle "The main operator`s steering wheel angle (on the steering column, not the actual wheel angle). The vehicle being steered to the left (counterclockwise) results in a positive steering wheel angle.  This is the yaw angle of the steering wheel with the z-axis along the centerline of the steering column. This parameter is defined according to a Z-Up axis system and the sign of the value is in accordance to the right-hand rule, as specified in SAE J670.  As specified in SAE J670, a Z-Up Axis System has positive X directed forward, positive Y to the left, and positive Z directed up.";
+CM_ SG_ 2565872907 SteeringWheelAngleRangeCounter "The signal indicates the number of steering wheel angle range overflows if the operating range of steering wheel is greater than the measuring range of sensor element. Positive values indicate left turns (counterclockwise). If the steering wheel angle range is +/-180 degrees this signal is equivalent to a steering wheel turn counter.  This parameter is defined according to a Z-Up axis system and the sign of the value is in accordance to the right-hand rule, as specified in SAE J670.  As specified in SAE J670, a Z-Up Axis System has positive X directed forward, positive Y to the left, and positive Z directed up.";
+CM_ SG_ 2565872907 Steering Wheel Angle Range Counter Type "The signal indicates whether the steering wheel angle sensor is capable of absolute measuring of the number of steering wheel angle ranges or not.  Absolute measuring means that the steering wheel angle range counter signal indicates the real position of steering wheel at ignition on.  Relative measuring means that the steering wheel angle range counter signal is zero at ignition on independent of the real position of steering wheel.
+
+00b = relative number of counts
+01b = absolute number of counts
+10b = not defined
+11b = signal not available";
+CM_ SG_ 2565872907 Steering Wheel Angle Range "The signal indicates the range of  the steering wheel angle the sensor element is capable to measure. The steering wheel angle signal ranges between the negative and the positive value of the steering wheel angle range.
+
+For example, a steering angle sensor transmits +13.6 rad to indicate a range of +/- 13.6 rad.";
+CM_ SG_ 2565872907 Steering Angle Sensor Active Mode "This signal indicates the operational mode of the steering angle sensor.";
+CM_ SG_ 2565872907 Steering Angle Sensor Calibrated "This signal indicates the calibration status of the steering angle sensor.";
+CM_ SG_ 2565872907 Message Counter "The message counter is to verify the signal path from the demanding device to the steering controller.  The support of this parameter is mandatory.
+
+Note:  The initial value of the 4 bit message counter for the first message during a driving cycle is arbitrary. In every following message the counter is incremented by 1  (0 follows 15).";
+CM_ SG_ 2565872907 Message Checksum "The message checksum is used to verify the signal path from the demanding device to the steering controller.  The support of this parameter is mandatory if PGN 61469 is supported as there is no means to indicate "not available".
+
+The 4 bit checksum is the sum of the high nibble and the low nibble of the sum of the identifier, the first 7 data bytes and the 4 bit message counter.  It is calculated as follows:
+
+Checksum = (Byte1 + Byte2 + Byte3 + Byte4 + Byte5 + Byte6 + Byte7 + (message counter & 0Fh) + message ID low byte + message ID mid low byte + message ID mid high byte + message ID high byte)
+
+Checksum = ((Checksum >> 4) + Checksum) & 0Fh";
+CM_ SG_ 2566878475 CRC8 "校验";
+CM_ SG_ 2566878475 Counter "计数";
+CM_ SG_ 2566878475 BrakingSystemStatus "制动系统当前状态(主系统)";
+CM_ SG_ 2566878475 Braking System AD Mode State 1 "与自动驾驶系统接口状态1(主系统)";
+CM_ SG_ 2566878475 Braking Error Event Active 1 "制动发生错误事件1(主系统)";
+CM_ SG_ 2566878475 Braking Error Event 1 "制动发生错误事件1列表(主系统)";
+CM_ SG_ 2298375691 Front Axle Left Wheel Speed "High resolution measurement of the speed of the left wheel of the steer axle.";
+CM_ SG_ 2298375691 Front Axle Right Wheel Speed "High Resolution measurement of the speed of the right wheel of the steer axle.";
+CM_ SG_ 2298375691 Rear Axle Left Wheel Speed "High Resolution measurement of the speed of the left wheel of the rear axle.";
+CM_ SG_ 2298375691 Rear Axle Right Wheel Speed "High Resolution measurement of the speed of the right wheel of the rear axle.";
+CM_ SG_ 2565865739 ASR Engine Control Active "";
+CM_ SG_ 2565865739 ASR Brake Control Active "";
+CM_ SG_ 2565865739 Anti-lock braking (ABS) Active "ABS当前激活状态(主系统)";
+CM_ SG_ 2565865739 EBS brake switch "制动踏板开关(主系统)";
+CM_ SG_ 2565865739 Brake Pedal Position "制动踏板位置(主系统)";
+CM_ SG_ 2565865739 ABS Offroad Switch "";
+CM_ SG_ 2565865739 ASR Offroad Switch "";
+CM_ SG_ 2565865739 ASR "hill holder" Switch "";
+CM_ SG_ 2565865739 Traction Control Override Switch "";
+CM_ SG_ 2565865739 Accelerator Interlock Switch "";
+CM_ SG_ 2565865739 Engine Derate Switch "";
+CM_ SG_ 2565865739 Auxiliary Engine Shutdown Switch "";
+CM_ SG_ 2565865739 Remote Accelerator Enable Switch "";
+CM_ SG_ 2565865739 Engine Retarder Selection "";
+CM_ SG_ 2565865739 ABS Fully Operational "";
+CM_ SG_ 2565865739 EBS Red Warning Lamp State "";
+CM_ SG_ 2565865739 ABS/EBS Amber Warning State(powered vehicle) "";
+CM_ SG_ 2565865739 ATC/ASR Lamp State "";
+CM_ SG_ 2565865739 Source Address of Controlling Device for Brake Control "";
+CM_ SG_ 2566767627 Brake Temperature Warning "";
+CM_ SG_ 2566767627 Halt Brake Mode "";
+CM_ SG_ 2566767627 Hill Holder Mode "";
+CM_ SG_ 2566767627 Foundation Brake Use "";
+CM_ SG_ 2566767627 XBR System State "";
+CM_ SG_ 2566767627 XBR Active Control Mode "";
+CM_ SG_ 2566767627 XBR Acceleration Limit "";
+CM_ SG_ 2566767627 Parking Brake Actuator Fully Activated "";
+CM_ SG_ 2566767627 Emergency Braking Active "";
+CM_ SG_ 2566767627 Railroad Mode "";
+CM_ SG_ 2349075358 ExternalAccDemand "";
+CM_ SG_ 2349075358 XBREBIMode "";
+CM_ SG_ 2349075358 XBRPriority "";
+CM_ SG_ 2349075358 XBRCtrlMode "";
+CM_ SG_ 2349075358 XBRurgency "";
+CM_ SG_ 2349075358 Msgcounter "";
+CM_ SG_ 2349075358 Msgchecksum "";
+CM_ SG_ 2565867787 Steering Wheel Angle "";
+CM_ SG_ 2565867787 Yaw Rate "偏航角速度(主系统)";
+CM_ SG_ 2565867787 Lateral Acceleration "车辆侧向加速(主系统)";
+CM_ SG_ 2565867787 Longitudinal Acceleration "车辆纵向加速度(主系统)";
+CM_ SG_ 2566811659 Gross Combination Weight "精度可能达不到，5%-30%";
+CM_ SG_ 2566878878 Brake Temp Warning PS "制动系统过热警告(主系统)";
+CM_ SG_ 2566878878 Brake Pressure Warning PS "制动系统气压警告(主系统)";
+CM_ SG_ 2566827275 Brake Application Pressure High Range, Front Axle, Left Wheel "";
+CM_ SG_ 2566827275 Brake Application Pressure High Range, Front Axle, Right Wheel "";
+CM_ SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #1, Left Wheel "";
+CM_ SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #1, Right Wheel "";
+CM_ SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #2, Left Wheel "";
+CM_ SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #2, Right Wheel "";
+CM_ SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #3, Left Wheel "";
+CM_ SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #3, Right Wheel "";
+CM_ SG_ 2566831883 Front Axle Speed "";
+CM_ SG_ 2566831883 Relative Speed; Front Axle, Left Wheel "";
+CM_ SG_ 2566831883 Relative Speed; Front Axle, Right Wheel "";
+CM_ SG_ 2566831883 Relative Speed; Rear Axle #1, Left Wheel "";
+CM_ SG_ 2566831883 Relative Speed; Rear Axle #1, Right Wheel "";
+CM_ SG_ 2566831883 Relative Speed; Rear Axle #2, Left Wheel "";
+CM_ SG_ 2566831883 Relative Speed; Rear Axle #2, Right Wheel "";
+CM_ SG_ 2566834699 ProtectLampSt  "";
+CM_ SG_ 2566834699 AmberWarnLamp  "";
+CM_ SG_ 2566834699 RedStopLampSt  "";
+CM_ SG_ 2566834699 MalfunctionIndLampSt "";
+CM_ SG_ 2566834699 SPN_LeastByteSPN "";
+CM_ SG_ 2566834699 SPN_SecondByteSPN "";
+CM_ SG_ 2566834699 FMI "";
+CM_ SG_ 2566834699 SPN_3MostSignificantBits "";
+CM_ SG_ 2566834699 OC_CurrCount "";
+CM_ SG_ 2566834699 SPNConversionMethod "";
+CM_ SG_ 2565492894 Tractor Brake Control
+ "单独牵引车制动";
+CM_ SG_ 2565492894 Trailer Brake  Control
+ "单独挂车制动";
+CM_ SG_ 2565492894 Parking Brake Control
+ "牵引车和挂车一起制动";
+CM_ SG_ 2565492894 Autohold Brake switch "控制临停激活或者关闭";
+CM_ SG_ 2565492894 Counter "";
+CM_ SG_ 2565492894 CSUM "";
+CM_ SG_ 2565492956 Tractor Brake Control
+ "单独牵引车制动";
+CM_ SG_ 2565492956 Trailer Brake  Control
+ "单独挂车制动";
+CM_ SG_ 2565492956 Parking Brake Control
+ "牵引车和挂车一起制动";
+CM_ SG_ 2565492956 Autohold Brake switch "控制临停激活或者关闭";
+CM_ SG_ 2565492956 Counter "";
+CM_ SG_ 2565492956 CSUM "";
+CM_ SG_ 2566787664 EPB_ParkBraStatus "EPB驻车状态";
+CM_ SG_ 2566787664 AH_ParkActive "Auto Hold制动状态(当激活后满足条件才会制动)";
+CM_ SG_ 2566787664 AH_BraStatus "Autohold功能激活状态";
+CM_ SG_ 2566787664 ErrCode "";
+CM_ SG_ 2566787664 ChildLockActive "童锁激活（没踩脚刹去操作开关释放驻车将激活）";
+CM_ SG_ 2566787664 LowPreRelParkLimit "气压过低将激活";
+CM_ SG_ 2566787664 IdepedtBraOly  "挂车独立制动";
+CM_ SG_ 2566787664 PrakBraForcTest "驻车力度检测";
+CM_ SG_ 2566787664 EPB_BraSwitch "制动开关，行驶过程中拉EPB开关将发送该信号用于点亮制动灯。";
+CM_ SG_ 2566787664 ParkBtSwitch "操作驻车开关将置位";
+CM_ SG_ 2566787664 RelsBtSwitch "操作释放开关将置位";
+CM_ SG_ 2566787664 AHBtSwitch "操作autohold开关将置位";
+CM_ SG_ 2566787664 IdepedtBtSwitch  "操作挂车独立制动开关将置位";
+CM_ SG_ 2566787664 ForcTestBtSwitch "操作检测点开关将置位";
+CM_ SG_ 2566787664 WarmingStatus "仪表警告声音";
+CM_ SG_ 2566787664 ParkBraPres "驻车气压";
+CM_ SG_ 2566787664 EPB AD Mode State SS
+ "";
+CM_ SG_ 2566787664 EPB AD Mode State PS
+ "";
+CM_ SG_ 2566834768 ProtectLampSt  "";
+CM_ SG_ 2566834768 AmberWarnLampSt "";
+CM_ SG_ 2566834768 RedStopLampSt  "";
+CM_ SG_ 2566834768 MalfunctionIndLampSt "";
+CM_ SG_ 2566834768 SPN_LeastByteSPN "";
+CM_ SG_ 2566834768 SPN_SecondByteSPN "";
+CM_ SG_ 2566834768 FMI "";
+CM_ SG_ 2566834768 SPN_3MostSignificantBits "";
+CM_ SG_ 2566834768 OC_CurrCount "";
+CM_ SG_ 2566834768 SPNConversionMethod "";
+CM_ SG_ 2566875186 PowerOnSwitchOfADCU "AD系统开关";
+CM_ SG_ 2566875186 ActiveSwitchOfADCU "自动驾驶激活开关";
+CM_ SG_ 2566838539 Auxiliary I/O#4 . Trailer Brake status "";
+CM_ SG_ 2566838539 Auxiliary I/O #3 "";
+CM_ SG_ 2566838539 Auxiliary I/O #2 "";
+CM_ SG_ 2566838539 Auxiliary I/O #1 "";
+CM_ SG_ 2566838539 Trailer Control Pressure "";
+CM_ SG_ 2566838539 Auxiliary I/O#8 – Door Switch "";
+CM_ SG_ 2566838539 Auxiliary I/O#7 – Low pressure switch "";
+CM_ SG_ 2566838539 Auxiliary I/O#6 – Rear axle 1 "";
+CM_ SG_ 2566838539 Auxiliary I/O#5 – Parking Brake switch "";
+CM_ SG_ 2566838539 Auxiliary I/O#9 – EBI switch "";
+CM_ SG_ 2633935883 Brake Lining Remaining, Front Axle Left "The percentage of brake lining which can still be measured for the left wheel on the front axle. 100% represents new
+brake linings, 0% represents totally worn brake linings.";
+CM_ SG_ 2633935883 Brake Lining Remaining, Front Axle Right "";
+CM_ SG_ 2633935883 Brake Lining Remaining, Rear Axle #1 Left "";
+CM_ SG_ 2633935883 Brake Lining Remaining, Rear Axle #1 Right "";
+CM_ SG_ 2633935883 Brake Lining Remaining, Rear Axle #2 Left "";
+CM_ SG_ 2633935883 Brake Lining Remaining, Rear Axle #2 Right "";
+CM_ SG_ 2633935883 Brake Lining Remaining, Rear Axle #3 Left "";
+CM_ SG_ 2633935883 Brake Lining Remaining, Rear Axle #3 Right "";
+CM_ SG_ 2566806063 Nominallevelfrontaxle "";
+CM_ SG_ 2566806063 Nominallevelrearaxle "";
+CM_ SG_ 2566806063 Below nominal level front axle "";
+CM_ SG_ 2566806063 Below nominal level rear axle "";
+CM_ SG_ 2566806063 Above nominal level front axle "";
+CM_ SG_ 2566806063 Above nominal level rear axle "";
+CM_ SG_ 2566806063 Lowering control mode front axle "";
+CM_ SG_ 2566806063 Lowering control mode rear axle "";
+CM_ SG_ 2566806063 Lifting control mode front axle "";
+CM_ SG_ 2566806063 Lifting control mode rear axle "";
+CM_ SG_ 2566806063 Kneeling information "";
+CM_ SG_ 2566806063 Level control mode "";
+CM_ SG_ 2566806063 Security device "";
+CM_ SG_ 2566806063 Vehicle motion inhibit "";
+CM_ SG_ 2566806063 Door release "";
+CM_ SG_ 2566806063 Lift axle 1 position "";
+CM_ SG_ 2566806063 Front axle in bumper range "";
+CM_ SG_ 2566806063 Rear axle in bumper range "";
+CM_ SG_ 2566806063 Lift axle 2 position "";
+CM_ SG_ 2566806063 Suspension Remote control "";
+CM_ SG_ 2566806063 Suspension Remote control "";
+CM_ SG_ 2566806063 Suspension control refusal information "";
+CM_ SG_ 2566805807 Relative Level Front Axle Left "";
+CM_ SG_ 2566805807 Relative Level Front Axle Right "";
+CM_ SG_ 2566805807 Relative Level Rear Axle Left "";
+CM_ SG_ 2566805807 Relative Level Rear Axle Right "";
+CM_ SG_ 2566805551 BellowPressureFrontAxleLeft "";
+CM_ SG_ 2566805551 BellowPressureFrontAxleRight "";
+CM_ SG_ 2566805551 BellowPressureRearAxleLeft "";
+CM_ SG_ 2566805551 BellowPressureRearAxleRight "";
+CM_ SG_ 2566803211 VDC Lamp State "";
+CM_ SG_ 2566803211 VDC Fully operational "";
+CM_ SG_ 2566803211 VDC Brake Light Request "";
+CM_ SG_ 2566803211 ROP Engine Control Active "";
+CM_ SG_ 2566803211 ROP Brake Control Active "";
+CM_ SG_ 2566803211 YC Engine Control Active "";
+CM_ SG_ 2566803211 YC Brake Control Active "";
+
+BA_DEF_ BO_  "NmMessage" ENUM "No","Yes";
+    BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+    BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+    BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+    BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","Event","IfActive","OnRequest","CA","CE","NoMsgSendType";
+    BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+    BA_DEF_ SG_  "GenSigSendType" ENUM  "cyclic","OnChange","OnWrite","IfActive","OnChangeWithRepetition","OnWriteWithRepetition","IfActiveWithRepetition","NoSigSendType","OnChangeAndIfActive","OnChangeAndIfActiveWithRepetition","CA", "CE","Event";
+    BA_DEF_ SG_  "GenSigStartValue" INT 0 0;
+    BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+    BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 0;
+    BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 0;
+    BA_DEF_ BO_  "GenMsgDelayTime" INT 0 0;
+    BA_DEF_  "DBName" STRING ;
+    BA_DEF_ SG_  "SPN" INT 0 0;
+    BA_DEF_  "NMIdType" ENUM  "0: standard (11 bit, default)","1: extended (29 bit)";
+    BA_DEF_  "NmMessageCount" INT 0 256;
+    BA_DEF_ BU_  "NmNode" ENUM  "No","Yes";
+    BA_DEF_  "NmBaseAddress" HEX 0 536870911;
+    BA_DEF_ SG_  "GenSigEVName" STRING ;
+    BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 10000;
+    BA_DEF_ SG_  "GenSigILSupport" ENUM  "Yes","No";
+    BA_DEF_ BO_  "GenMsgILSupport" ENUM  "Yes","No";
+    BA_DEF_ BO_  "GenMsgRequestable" INT 0 1;
+    BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG";
+    BA_DEF_ BU_  "NodeLayerModules" STRING ;
+    BA_DEF_ BU_  "NmStationAddress" INT 0 255;
+    BA_DEF_ BU_  "NmJ1939AAC" INT 0 1;
+    BA_DEF_ BU_  "NmJ1939IndustryGroup" INT 0 7;
+    BA_DEF_ BU_  "NmJ1939System" INT 0 127;
+    BA_DEF_ BU_  "NmJ1939SystemInstance" INT 0 15;
+    BA_DEF_ BU_  "NmJ1939Function" INT 0 255;
+    BA_DEF_ BU_  "NmJ1939FunctionInstance" INT 0 7;
+    BA_DEF_ BU_  "NmJ1939ECUInstance" INT 0 3;
+    BA_DEF_ BU_  "NmJ1939ManufacturerCode" INT 0 2047;
+    BA_DEF_ BU_  "NmJ1939IdentityNumber" INT 0 2097151;
+    BA_DEF_ BU_  "ECU" STRING ;
+    BA_DEF_  "DatabaseVersion" STRING ;
+    BA_DEF_  "BusType" STRING ;
+    BA_DEF_  "ProtocolType" STRING ;
+
+BA_DEF_DEF_  "NmMessage" "No";
+    BA_DEF_DEF_  "DiagState" "No";
+    BA_DEF_DEF_  "DiagRequest" "No";
+    BA_DEF_DEF_  "DiagResponse" "No";
+    BA_DEF_DEF_  "GenMsgSendType" "cyclic";
+    BA_DEF_DEF_  "GenMsgCycleTime" 0;
+    BA_DEF_DEF_  "GenSigSendType" "cyclic";
+    BA_DEF_DEF_  "GenSigStartValue" 0;
+
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+    BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+    BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+    BA_DEF_DEF_  "GenMsgDelayTime" 0;
+    BA_DEF_DEF_  "DBName" "";
+    BA_DEF_DEF_  "SPN" 0;
+    BA_DEF_DEF_  "NMIdType" "0: standard (11 bit, default)";
+    BA_DEF_DEF_  "NmMessageCount" 128;
+    BA_DEF_DEF_  "NmNode" "No";
+    BA_DEF_DEF_  "NmBaseAddress" 0;
+    BA_DEF_DEF_  "GenSigEVName" "Env@Nodename_@Signame";
+    BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+    BA_DEF_DEF_  "GenSigILSupport" "Yes";
+    BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+    BA_DEF_DEF_  "GenMsgRequestable" 1;
+    BA_DEF_DEF_  "VFrameFormat" "J1939PG";
+    BA_DEF_DEF_  "NodeLayerModules" "oseknm01.dll,CANoeILNLVector.dll,J1939_IL.dll";
+    BA_DEF_DEF_  "NmStationAddress" 254;
+    BA_DEF_DEF_  "NmJ1939AAC" 0;
+    BA_DEF_DEF_  "NmJ1939IndustryGroup" 0;
+    BA_DEF_DEF_  "NmJ1939System" 0;
+    BA_DEF_DEF_  "NmJ1939SystemInstance" 0;
+    BA_DEF_DEF_  "NmJ1939Function" 0;
+    BA_DEF_DEF_  "NmJ1939FunctionInstance" 0;
+    BA_DEF_DEF_  "NmJ1939ECUInstance" 0;
+    BA_DEF_DEF_  "NmJ1939ManufacturerCode" 0;
+    BA_DEF_DEF_  "NmJ1939IdentityNumber" 0;
+    BA_DEF_DEF_  "ECU" "";
+    BA_DEF_DEF_  "DatabaseVersion" "";
+    BA_DEF_DEF_  "BusType" "";
+    BA_DEF_DEF_  "ProtocolType" "";
+BA_ "DBName" "通讯矩阵- 赢彻B1-I-CAN0724";
+    BA_ "BusType" "J1939";
+BA_ "GenMsgCycleTime"BO_ 2365547678 100;
+BA_ "GenMsgCycleTime"BO_ 2365553054 20;
+BA_ "GenMsgCycleTime"BO_ 2566879763 20;
+BA_ "GenMsgCycleTime"BO_ 2566880019 20;
+BA_ "GenMsgCycleTime"BO_ 2566880275 20;
+BA_ "GenMsgCycleTime"BO_ 2566880531 20;
+BA_ "GenMsgCycleTime"BO_ 2566842927 100;
+BA_ "SPN" SG_ 2566842927 AxleWeight 582;
+BA_ "GenMsgCycleTime"BO_ 2566834759 1000;
+BA_ "SPN" SG_ 2566834759 ProtectLampSt  987;
+BA_ "SPN" SG_ 2566834759 AmberWarnLamp  624;
+BA_ "SPN" SG_ 2566834759 RedStopLampSt  623;
+BA_ "SPN" SG_ 2566834759 MalfunctionIndLampSt 1213;
+BA_ "SPN" SG_ 2566834759 SPN_LeastByteSPN 1214;
+BA_ "SPN" SG_ 2566834759 SPN_SecondByteSPN 1214;
+BA_ "SPN" SG_ 2566834759 FMI 1215;
+BA_ "SPN" SG_ 2566834759 SPN_3MostSignificantBits 1214;
+BA_ "SPN" SG_ 2566834759 OC_CurrCount 1216;
+BA_ "SPN" SG_ 2566834759 SPNConversionMethod 1706;
+BA_ "GenMsgCycleTime"BO_ 2565872907 10;
+BA_ "SPN" SG_ 2565872907 SteeringWheelAngle 3683;
+BA_ "SPN" SG_ 2565872907 SteeringWheelAngleRangeCounter 3684;
+BA_ "SPN" SG_ 2565872907 Steering Wheel Angle Range Counter Type 3685;
+BA_ "SPN" SG_ 2565872907 Steering Wheel Angle Range 3686;
+BA_ "SPN" SG_ 2565872907 Steering Angle Sensor Active Mode 3687;
+BA_ "SPN" SG_ 2565872907 Steering Angle Sensor Calibrated 3688;
+BA_ "SPN" SG_ 2565872907 Message Counter 3689;
+BA_ "SPN" SG_ 2565872907 Message Checksum 3690;
+BA_ "GenMsgCycleTime"BO_ 2566878475 100;
+BA_ "GenMsgCycleTime"BO_ 2298375691 20;
+BA_ "SPN" SG_ 2298375691 Front Axle Left Wheel Speed 1592;
+BA_ "SPN" SG_ 2298375691 Front Axle Right Wheel Speed 1593;
+BA_ "SPN" SG_ 2298375691 Rear Axle Left Wheel Speed 1594;
+BA_ "SPN" SG_ 2298375691 Rear Axle Right Wheel Speed 1595;
+BA_ "GenMsgCycleTime"BO_ 2565865739 100;
+BA_ "SPN" SG_ 2565865739 ASR Engine Control Active 561;
+BA_ "SPN" SG_ 2565865739 ASR Brake Control Active 562;
+BA_ "SPN" SG_ 2565865739 Anti-lock braking (ABS) Active 563;
+BA_ "SPN" SG_ 2565865739 EBS brake switch 1121;
+BA_ "SPN" SG_ 2565865739 Brake Pedal Position 521;
+BA_ "SPN" SG_ 2565865739 ABS Offroad Switch 575;
+BA_ "SPN" SG_ 2565865739 ASR Offroad Switch 576;
+BA_ "SPN" SG_ 2565865739 ASR "hill holder" Switch 577;
+BA_ "SPN" SG_ 2565865739 Traction Control Override Switch 1238;
+BA_ "SPN" SG_ 2565865739 Accelerator Interlock Switch 972;
+BA_ "SPN" SG_ 2565865739 Engine Derate Switch 971;
+BA_ "SPN" SG_ 2565865739 Auxiliary Engine Shutdown Switch 970;
+BA_ "SPN" SG_ 2565865739 Remote Accelerator Enable Switch 969;
+BA_ "SPN" SG_ 2565865739 Engine Retarder Selection 973;
+BA_ "SPN" SG_ 2565865739 ABS Fully Operational 1243;
+BA_ "SPN" SG_ 2565865739 EBS Red Warning Lamp State 1439;
+BA_ "SPN" SG_ 2565865739 ABS/EBS Amber Warning State(powered vehicle) 1438;
+BA_ "SPN" SG_ 2565865739 ATC/ASR Lamp State 1793;
+BA_ "SPN" SG_ 2565865739 Source Address of Controlling Device for Brake Control 1481;
+BA_ "GenMsgCycleTime"BO_ 2566767627 100;
+BA_ "SPN" SG_ 2566767627 Brake Temperature Warning 3839;
+BA_ "SPN" SG_ 2566767627 Halt Brake Mode 2913;
+BA_ "SPN" SG_ 2566767627 Hill Holder Mode 2912;
+BA_ "SPN" SG_ 2566767627 Foundation Brake Use 2919;
+BA_ "SPN" SG_ 2566767627 XBR System State 2917;
+BA_ "SPN" SG_ 2566767627 XBR Active Control Mode 2918;
+BA_ "SPN" SG_ 2566767627 XBR Acceleration Limit 2921;
+BA_ "SPN" SG_ 2566767627 Parking Brake Actuator Fully Activated 5275;
+BA_ "SPN" SG_ 2566767627 Emergency Braking Active 5847;
+BA_ "SPN" SG_ 2566767627 Railroad Mode 7942;
+BA_ "GenMsgCycleTime"BO_ 2349075358 20;
+BA_ "SPN" SG_ 2349075358 ExternalAccDemand 2920;
+BA_ "SPN" SG_ 2349075358 XBREBIMode 2914;
+BA_ "SPN" SG_ 2349075358 XBRPriority 2915;
+BA_ "SPN" SG_ 2349075358 XBRCtrlMode 2916;
+BA_ "SPN" SG_ 2349075358 XBRurgency 4099;
+BA_ "SPN" SG_ 2349075358 Msgcounter 3189;
+BA_ "SPN" SG_ 2349075358 Msgchecksum 3188;
+BA_ "GenMsgCycleTime"BO_ 2565867787 20;
+BA_ "SPN" SG_ 2565867787 Steering Wheel Angle 1807;
+BA_ "SPN" SG_ 2565867787 Yaw Rate 1808;
+BA_ "SPN" SG_ 2565867787 Lateral Acceleration 1809;
+BA_ "SPN" SG_ 2565867787 Longitudinal Acceleration 1810;
+BA_ "GenMsgCycleTime"BO_ 2566811659 1000;
+BA_ "SPN" SG_ 2566811659 Gross Combination Weight 1760;
+BA_ "GenMsgCycleTime"BO_ 2566878878 100;
+BA_ "GenMsgCycleTime"BO_ 2566827275 100;
+BA_ "SPN" SG_ 2566827275 Brake Application Pressure High Range, Front Axle, Left Wheel 1091;
+BA_ "SPN" SG_ 2566827275 Brake Application Pressure High Range, Front Axle, Right Wheel 1092;
+BA_ "SPN" SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #1, Left Wheel 1093;
+BA_ "SPN" SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #1, Right Wheel 1094;
+BA_ "SPN" SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #2, Left Wheel 1095;
+BA_ "SPN" SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #2, Right Wheel 1096;
+BA_ "SPN" SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #3, Left Wheel 1097;
+BA_ "SPN" SG_ 2566827275 Brake Application Pressure High Range, Rear Axle #3, Right Wheel 1098;
+BA_ "GenMsgCycleTime"BO_ 2566831883 100;
+BA_ "SPN" SG_ 2566831883 Front Axle Speed 904;
+BA_ "SPN" SG_ 2566831883 Relative Speed; Front Axle, Left Wheel 905;
+BA_ "SPN" SG_ 2566831883 Relative Speed; Front Axle, Right Wheel 906;
+BA_ "SPN" SG_ 2566831883 Relative Speed; Rear Axle #1, Left Wheel 907;
+BA_ "SPN" SG_ 2566831883 Relative Speed; Rear Axle #1, Right Wheel 908;
+BA_ "SPN" SG_ 2566831883 Relative Speed; Rear Axle #2, Left Wheel 909;
+BA_ "SPN" SG_ 2566831883 Relative Speed; Rear Axle #2, Right Wheel 910;
+BA_ "GenMsgCycleTime"BO_ 2566834699 1000;
+BA_ "SPN" SG_ 2566834699 ProtectLampSt  987;
+BA_ "SPN" SG_ 2566834699 AmberWarnLamp  624;
+BA_ "SPN" SG_ 2566834699 RedStopLampSt  623;
+BA_ "SPN" SG_ 2566834699 MalfunctionIndLampSt 1213;
+BA_ "SPN" SG_ 2566834699 SPN_LeastByteSPN 1214;
+BA_ "SPN" SG_ 2566834699 SPN_SecondByteSPN 1214;
+BA_ "SPN" SG_ 2566834699 FMI 1215;
+BA_ "SPN" SG_ 2566834699 SPN_3MostSignificantBits 1214;
+BA_ "SPN" SG_ 2566834699 OC_CurrCount 1216;
+BA_ "SPN" SG_ 2566834699 SPNConversionMethod 1706;
+BA_ "GenMsgCycleTime"BO_ 2565492894 100;
+BA_ "GenMsgCycleTime"BO_ 2565492956 100;
+BA_ "GenMsgCycleTime"BO_ 2566787664 100;
+BA_ "GenMsgCycleTime"BO_ 2566834768 1000;
+BA_ "GenMsgCycleTime"BO_ 2566875186 100;
+BA_ "GenMsgCycleTime"BO_ 2566838539 100;
+BA_ "SPN" SG_ 2566838539 Auxiliary I/O#4 . Trailer Brake status 704;
+BA_ "SPN" SG_ 2566838539 Auxiliary I/O #3 703;
+BA_ "SPN" SG_ 2566838539 Auxiliary I/O #2 702;
+BA_ "SPN" SG_ 2566838539 Auxiliary I/O #1 701;
+BA_ "GenMsgCycleTime"BO_ 2633935883 5000;
+BA_ "SPN" SG_ 2633935883 Brake Lining Remaining, Front Axle Left 1099;
+BA_ "SPN" SG_ 2633935883 Brake Lining Remaining, Front Axle Right 1100;
+BA_ "SPN" SG_ 2633935883 Brake Lining Remaining, Rear Axle #1 Left 1101;
+BA_ "SPN" SG_ 2633935883 Brake Lining Remaining, Rear Axle #1 Right 1102;
+BA_ "SPN" SG_ 2633935883 Brake Lining Remaining, Rear Axle #2 Left 1103;
+BA_ "SPN" SG_ 2633935883 Brake Lining Remaining, Rear Axle #2 Right 1104;
+BA_ "SPN" SG_ 2633935883 Brake Lining Remaining, Rear Axle #3 Left 1105;
+BA_ "SPN" SG_ 2633935883 Brake Lining Remaining, Rear Axle #3 Right 1106;
+BA_ "GenMsgCycleTime"BO_ 2566806063 100;
+BA_ "SPN" SG_ 2566806063 Nominallevelfrontaxle 1734;
+BA_ "SPN" SG_ 2566806063 Nominallevelrearaxle 1733;
+BA_ "SPN" SG_ 2566806063 Below nominal level front axle 1738;
+BA_ "SPN" SG_ 2566806063 Below nominal level rear axle 1754;
+BA_ "SPN" SG_ 2566806063 Above nominal level front axle 1737;
+BA_ "SPN" SG_ 2566806063 Above nominal level rear axle 1736;
+BA_ "SPN" SG_ 2566806063 Lowering control mode front axle 1740;
+BA_ "SPN" SG_ 2566806063 Lowering control mode rear axle 1755;
+BA_ "SPN" SG_ 2566806063 Lifting control mode front axle 1739;
+BA_ "SPN" SG_ 2566806063 Lifting control mode rear axle 1756;
+BA_ "SPN" SG_ 2566806063 Kneeling information 1742;
+BA_ "SPN" SG_ 2566806063 Level control mode 1741;
+BA_ "SPN" SG_ 2566806063 Security device 1746;
+BA_ "SPN" SG_ 2566806063 Vehicle motion inhibit 1745;
+BA_ "SPN" SG_ 2566806063 Door release 1744;
+BA_ "SPN" SG_ 2566806063 Lift axle 1 position 1743;
+BA_ "SPN" SG_ 2566806063 Front axle in bumper range 1824;
+BA_ "SPN" SG_ 2566806063 Rear axle in bumper range 1823;
+BA_ "SPN" SG_ 2566806063 Lift axle 2 position 1822;
+BA_ "SPN" SG_ 2566806063 Suspension Remote control 1826;
+BA_ "SPN" SG_ 2566806063 Suspension Remote control 1825;
+BA_ "SPN" SG_ 2566806063 Suspension control refusal information 1827;
+BA_ "GenMsgCycleTime"BO_ 2566805807 100;
+BA_ "SPN" SG_ 2566805807 Relative Level Front Axle Left 1721;
+BA_ "SPN" SG_ 2566805807 Relative Level Front Axle Right 1722;
+BA_ "SPN" SG_ 2566805807 Relative Level Rear Axle Left 1724;
+BA_ "SPN" SG_ 2566805807 Relative Level Rear Axle Right 1723;
+BA_ "GenMsgCycleTime"BO_ 2566805551 100;
+BA_ "SPN" SG_ 2566805551 BellowPressureFrontAxleLeft 1725;
+BA_ "SPN" SG_ 2566805551 BellowPressureFrontAxleRight 1726;
+BA_ "SPN" SG_ 2566805551 BellowPressureRearAxleLeft 1727;
+BA_ "SPN" SG_ 2566805551 BellowPressureRearAxleRight 1728;
+BA_ "GenMsgCycleTime"BO_ 2566803211 100;
+BA_ "SPN" SG_ 2566803211 VDC Lamp State 1813;
+BA_ "SPN" SG_ 2566803211 VDC Fully operational 1814;
+BA_ "SPN" SG_ 2566803211 VDC Brake Light Request 1815;
+BA_ "SPN" SG_ 2566803211 ROP Engine Control Active 1816;
+BA_ "SPN" SG_ 2566803211 ROP Brake Control Active 1818;
+BA_ "SPN" SG_ 2566803211 YC Engine Control Active 1817;
+BA_ "SPN" SG_ 2566803211 YC Brake Control Active 1819;
+
+VAL_ 2365547678 AD Mode Enable PS 0 "inhabit" 1 "enable" 2 "fail" 3 "reserve" ;
+VAL_ 2365547678 AD Mode Engage PS 0 "inhabit" 1 "engage" 2 "reserve" 3 "reserve" ;
+VAL_ 2365553054 SW Angle Request Valid PS 0 "Valid" 1 "Invalid" ;
+VAL_ 2566879763 Current SW Angle Valid PS 0 "Valid" 1 "Invalid" ;
+VAL_ 2566879763 Current SW Speed Valid PS 0 "Valid" 1 "Invalid" ;
+VAL_ 2566880019 Current Driver Torque Valid PS 0 "Valid" 1 "Invalid" ;
+VAL_ 2566880019 Steering Override PS 0 "Inactive" 1 "Active" 2 "DriverReaction" ;
+VAL_ 2566880019 Steering Override Valid PS 0 "Valid" 1 "Invalid" ;
+VAL_ 2566880019 Steering System Status PS 0 "Normal" 1 "NoElectricalAssistance" 2 "HydraulicFailure(NotapplicableatB0sample)" 3 "Fault" 4 "Reserve" ;
+VAL_ 2566880019 State Voltage PS 0 "Normal" 1 "OverVoltage" 2 "UnderVoltage" ;
+VAL_ 2566880019 State Temperature PS 0 "Normal" 1 "OverHeat" ;
+VAL_ 2566880019 Steering Error Event1 Active PS 0 "Inactive" 1 "Active" ;
+VAL_ 2566834759 ProtectLampSt  0 "LampOff" 1 "LampOn" ;
+VAL_ 2566834759 AmberWarnLamp  0 "LampOff" 1 "LampOn" ;
+VAL_ 2566834759 RedStopLampSt  0 "LampOff" 1 "LampOn" ;
+VAL_ 2566834759 MalfunctionIndLampSt 0 "LampOff" 1 "LampOn" ;
+VAL_ 2565872907 Steering Wheel Angle Range Counter Type 0 "relativenumberofcounts" 1 "absolutenumberofcounts" 2 "notdefined" 3 "signalnotavailable" ;
+VAL_ 2565872907 Steering Angle Sensor Active Mode 0 "Programmingmodeactive" 1 "Normalmodeactive" 2 "Reserved" 3 "Notavailable" ;
+VAL_ 2565872907 Steering Angle Sensor Calibrated 0 "SASnotcalibrated" 1 "SAScalibrated" 2 "Reserved" 3 "Notavailable" ;
+VAL_ 2566878475 BrakingSystemStatus 0 "Normal" 1 "Fault" 2 "Reserve" 3 "Reserve" ;
+VAL_ 2566878475 Braking System AD Mode State 1 0 "NotReadyPS" 1 "ReadyPS" 2 "Reserve" 3 "ADUEngagedPS" 4 "ADUEngagedDegradePS" 5 "ErrorPS" ;
+VAL_ 2566878475 Braking Error Event Active 1 0 "Inactive" 1 "Active" ;
+VAL_ 2566878475 Braking Error Event 1 0 "ADUPS故障" 1 "ADModeEnablePS丢失" 2 "ADModeEngagePS丢失" 3 "XBRRequestADUPS丢失" ;
+VAL_ 2565865739 Anti-lock braking (ABS) Active 0 "ATCenginecontrolpassive" 1 "ATCenginecontrolactive" 2 "ATCenginecontrolnotinstalled" ;
+VAL_ 2565865739 EBS brake switch 0 "Brakepedalisnotbeingpressed" 1 "Brakepedalisbeingpressed" 2 "Errorindicator" 3 "Notavailableornotinstalled" ;
+VAL_ 2565865739 ABS Offroad Switch 0 "ABSoff-roadswitchpassive" 1 "ABSoff-roadswitchactive" ;
+VAL_ 2565865739 ASR Offroad Switch 0 "ATCoff-roadswitchpassive" 1 "ATCoff-roadswitchactive" ;
+VAL_ 2565865739 ASR "hill holder" Switch 0 "hillholderswitchpassive" 1 "hillholderswitchactive" 2 "Errorindicator" 3 "notavailable(HSAnotconfigured)" ;
+VAL_ 2565865739 Accelerator Interlock Switch 0 "Off" 1 "On" 2 "Error" 3 "Notavailable" ;
+VAL_ 2565865739 Engine Derate Switch 0 "Off" 1 "On" 2 "Error" 3 "Notavailable" ;
+VAL_ 2565865739 Auxiliary Engine Shutdown Switch 0 "Off" 1 "On" 2 "Error" 3 "Notavailable" ;
+VAL_ 2565865739 Remote Accelerator Enable Switch 0 "Off" 1 "On" 2 "Error" 3 "Notavailable" ;
+VAL_ 2565865739 EBS Red Warning Lamp State 0 "EBSredwarninglampoff" 1 "EBSredwarninglampon" 2 "EBSredwarninglampnotsupported(noEBD)" ;
+VAL_ 2565865739 ABS/EBS Amber Warning State(powered vehicle) 0 "ABSlampoff" 1 "ABSlampon" ;
+VAL_ 2565865739 ATC/ASR Lamp State 0 "ATClampoff" 1 "ATClampon" ;
+VAL_ 2566767627 Brake Temperature Warning 0 "NotActive" 1 "Active" 2 "Reserved" 3 "notavailable" ;
+VAL_ 2566767627 Foundation Brake Use 0 "Foundationbrakesnotinuse" 1 "Foundationbrakesinuse" 2 "Reserved" 3 "Notavailable" ;
+VAL_ 2566767627 Emergency Braking Active 0 "HybridSystemStopIndicatorisoff" 1 "HybridSystemStopIndicatorisoncontinuously" 2 "HybridSystemStopIndicatorisflashing" 3 "Notavailable" ;
+VAL_ 2349075358 XBREBIMode 0 "NoEnduranceBrakeIntegrationallowed" 1 "OnlyEnduranceBrakesallowed" 2 "EnduranceBrakeIntegrationallowed" 3 "Notdefined" ;
+VAL_ 2349075358 XBRPriority 0 "Highestpriority" 1 "Highpriority" 2 "Mediumpriority" 3 "Lowpriority" ;
+VAL_ 2349075358 XBRCtrlMode 0 "Overridedisabled" 1 "Accelerationcontrolwithadditionmode" 2 "Accelerationcontrolwithmaximummode" 3 "Notdefined" ;
+VAL_ 2566878878 Brake Temp Warning PS 0 "Inactive" 1 "Active" ;
+VAL_ 2566878878 Brake Pressure Warning PS 0 "Inactive" 1 "Active" ;
+VAL_ 2566834699 ProtectLampSt  0 "LampOff" 1 "LampOn" ;
+VAL_ 2566834699 AmberWarnLamp  0 "LampOff" 1 "LampOn" ;
+VAL_ 2566834699 RedStopLampSt  0 "LampOff" 1 "LampOn" ;
+VAL_ 2566834699 MalfunctionIndLampSt 0 "LampOff" 1 "LampOn" ;
+VAL_ 2565492894 Autohold Brake switch 0 "0ff" 1 "0n" 2 "fault" 3 "reserve" ;
+VAL_ 2565492956 Parking Brake Control
+ 251 "isParkingBraketSet" 252 "MidPosition（自动执行坡起）" ;
+VAL_ 2566787664 EPB_ParkBraStatus 0 "NotAvailable（0-100%的驻车状态）" 1 "Enable(驻车)" 2 "Disable（释放驻车）" 3 "Error" ;
+VAL_ 2566787664 AH_ParkActive 0 "NotAvailable" 1 "Active" 2 "Inactive" 3 "Error" ;
+VAL_ 2566787664 AH_BraStatus 0 "NotAvailable" 1 "On" 2 "Off" 3 "Error" ;
+VAL_ 2566787664 ErrCode 0 "NoError" ;
+VAL_ 2566787664 ChildLockActive 0 "NotAvailable" 1 "On" 2 "Off" 3 "Error" ;
+VAL_ 2566787664 LowPreRelParkLimit 0 "NotAvailable" 1 "On" 2 "Off" 3 "Error" ;
+VAL_ 2566787664 IdepedtBraOly  0 "NotAvailable" 1 "On" 2 "Off" 3 "Error" ;
+VAL_ 2566787664 PrakBraForcTest 0 "NotAvailable" 1 "On" 2 "Off" 3 "Error" ;
+VAL_ 2566787664 EPB_BraSwitch 0 "EPBBrakeNotSet" 1 "EPBBrakeSet" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566787664 ParkBtSwitch 0 "Switchpassive" 1 "Switchactive" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566787664 RelsBtSwitch 0 "Switchpassive" 1 "Switchactive" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566787664 AHBtSwitch 0 "Switchpassive" 1 "Switchactive" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566787664 IdepedtBtSwitch  0 "Switchpassive" 1 "Switchactive" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566787664 ForcTestBtSwitch 0 "Switchpassive" 1 "Switchactive" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566787664 WarmingStatus 0 "NoWarming" 1 "FunctionLimitWarming(智能功能受限，熄火没有自动驻车需要手动操作EPB开关驻车)" 2 "SystemFaultWarming（系统故障无法操作驻车，需要通过机械应急方式操作驻车）" 3 "AutomatedDrivingWarming（自动驾驶中，需要退出自动驾驶才能操作）" ;
+VAL_ 2566787664 EPB AD Mode State SS
+ 0 "NotReadySS" 1 "ReadySS" 2 "StandbySS" 3 "Reserve" 4 "Reserve" 5 "ADUEngagedSS" 6 "Reserve" 7 "ErrorSS" ;
+VAL_ 2566787664 EPB AD Mode State PS
+ 0 "NotReadyPS" 1 "ReadyPS" 2 "Reserve" 3 "ADUEngagedPS" 4 "Reserve" 5 "Reserve" 6 "Reserve" 7 "ErrorPS" ;
+VAL_ 2566834768 AmberWarnLampSt 0 "LampOff" 1 "LampOn" ;
+VAL_ 2566834768 RedStopLampSt  0 "LampOff" 1 "LampOn" ;
+VAL_ 2566875186 PowerOnSwitchOfADCU 0 "nopress" 1 "pressed" 3 "stick" ;
+VAL_ 2566875186 ActiveSwitchOfADCU 0 "nopress" 1 "pressed" 3 "stick" ;
+VAL_ 2566838539 Auxiliary I/O#4 . Trailer Brake status 0 "Trailerbrakeinactive" 1 "TrailerBrakeactive" 2 "ErrorIndicator" 3 "Notavailable" ;
+VAL_ 2566838539 Auxiliary I/O #3 0 "HaltBrakeModeinactive" 1 "HaltBrakeModeactive" 2 "HaltBrakeModenotavailablecvfff" ;
+VAL_ 2566838539 Auxiliary I/O #2 0 "RequestedBrakeLightOff" 1 "RequestedBrakeLightOn" 2 "Notavailable" ;
+VAL_ 2566838539 Auxiliary I/O #1 0 "BrakeAssistOff" 1 "BrakeAssistOn" 2 "Notavailable" ;
+VAL_ 2566838539 Auxiliary I/O#8 – Door Switch 0 "Releasedoorbrake" 1 "Activatedoorbrake" 2 "ErrorIndicator" 3 "Notavailable" ;
+VAL_ 2566838539 Auxiliary I/O#7 – Low pressure switch 0 "Supplypressureinsufficient" 1 "Supplypressuresufficient" 2 "ErrorIndicator" 3 "Notavailableornotinstalled" ;
+VAL_ 2566838539 Auxiliary I/O#6 – Rear axle 1 0 "DifferentialLockDisengaged" 1 "DifferentialLockEngaged" 2 "Errorindicator" 3 "Notavailableornotinstalled" ;
+VAL_ 2566838539 Auxiliary I/O#5 – Parking Brake switch 0 "Parkingbrakenotset" 1 "Parkingbrakeset" 2 "Errorindicator" 3 "Notavailableornotinstalled" ;
+VAL_ 2566838539 Auxiliary I/O#9 – EBI switch 0 "Retarderintegrationdisabled" 1 "Retarderintegrationenabled" 2 "Errorindicator" 3 "Notavailableornotinstalled" ;
+VAL_ 2566806063 Below nominal level front axle 0 "Notbelow" 1 "Below" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Below nominal level rear axle 0 "Notbelow" 1 "Below" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Above nominal level front axle 0 "Notbelow" 1 "Below" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Above nominal level rear axle 0 "Notbelow" 1 "Below" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Lowering control mode front axle 0 "Loweringnotactive" 1 "Loweringactive" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Lowering control mode rear axle 0 "Loweringnotactive" 1 "Loweringactive" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Lifting control mode front axle 0 "Liftingnotactive" 1 "Liftingactive" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Lifting control mode rear axle 0 "Liftingnotactive" 1 "Liftingactive" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Security device 0 "Notactive" 1 "Active" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Vehicle motion inhibit 0 "Vehiclemaybemoved" 1 "Vehiclemotionisinhibited" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Door release 0 "Doorsmaynotbeopened" 1 "Doorsmaybeopened" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Lift axle 1 position 0 "Liftaxlepositiondown/tagaxleladen" 1 "Liftaxlepositionup/tagaxleunladen" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Front axle in bumper range 0 "Actualleveloutofbumperrange" 1 "Actuallevelwithinbumperrange" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Rear axle in bumper range 0 "Actualleveloutofbumperrange" 1 "Actuallevelwithinbumperrange" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Lift axle 2 position 0 "Liftaxlepositiondown/tagaxleladen" 1 "Liftaxlepositionup/tagaxleunladen" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Suspension Remote control 0 "Notactive" 1 "Active" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566806063 Suspension Remote control 0 "Notactive" 1 "Active" 2 "Error" 3 "Notavailable" ;
+

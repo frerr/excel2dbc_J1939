@@ -1,0 +1,500 @@
+VERSION ""
+
+
+NS_ : 
+        NS_DESC_
+            CM_
+            BA_DEF_
+            BA_
+            VAL_
+            CAT_DEF_
+            CAT_
+            FILTER
+            BA_DEF_DEF_
+            EV_DATA_
+            ENVVAR_DATA_
+            SGTYPE_
+            SGTYPE_VAL_
+            BA_DEF_SGTYPE_
+            BA_SGTYPE_
+            SIG_TYPE_REF_
+            VAL_TABLE_
+            SIG_GROUP_
+            SIG_VALTYPE_
+            SIGTYPE_VALTYPE_
+            BO_TX_BU_
+            BA_DEF_REL_
+            BA_REL_
+            BA_DEF_DEF_REL_
+            BU_SG_REL_
+            BU_EV_REL_
+            BU_BO_REL_
+            SG_MUL_VAL_
+
+BS_:
+
+BU_: EECU VGT TCU SCU ABS/EBS/ESC Retarder EPS/HSCU IC DCDC BBM Display AEBS LKA ELC/ECAS HVAP VECU HCU BCM TPMS PAC ACM AVM CIOM LSCU EPB FNOx RNox ACU HCCB SCM ADCU UQS ROBD T-BOX Charge RKE DFD/DFMS LDWS FCWS BSD DCM VDR/BeiDou EMCU MCU(Axle) BMS CDC PEPS YRS Exhaust Ret. Engine Ret. AFS CCM CVG EAC SAS Tacho IVI ATC DST Camera Infotainment EHPS Gateway(INC) HOD BCA rADCU rEHPS 
+
+
+BO_ 2365547678 AutoDrive_ADCU: 8 ADCU
+ SG_ CRC8 : 0|8@1+ (1.0,0.0) [0.0|255.0]  "" SCU,ABS/EBS/ESC,VECU,BCM,EHPS,BCA,rEHPS
+ SG_ Counter : 8|4@1+ (1.0,0.0) [0.0|15.0]  "" SCU,ABS/EBS/ESC,VECU,BCM,EHPS,BCA,rEHPS
+ SG_ AD Mode Enable PS : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" SCU,ABS/EBS/ESC,VECU,BCM,EHPS,BCA,rEHPS
+ SG_ AD Mode Engage PS : 20|2@1+ (1.0,0.0) [0.0|3.0]  "" SCU,ABS/EBS/ESC,VECU,BCM,EHPS,BCA,rEHPS
+
+BO_ 2566874782 BodyControl_ADCU: 8 ADCU
+ SG_ GasHornActivationSwitch : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ ElectricHornActivationSwitch : 2|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ ADWiperSwitch : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ ADWiperControl : 6|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ ADHeadlampSwitch : 8|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ ADHeadlampControl : 10|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ TurnLampControl : 12|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ BrakelightCommand : 14|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ ADWasherSwitch : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ FogLightSwitch : 18|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ AmbientLightDisplayRequest : 20|4@1+ (1.0,0.0) [0.0|15.0]  "" BCM
+ SG_ SeatbeltTightenRequest : 24|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ DoorEmergencyUnlocking : 26|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+ SG_ SeatVibrationRequest : 28|3@1+ (1.0,0.0) [0.0|7.0]  "" BCM
+ SG_ Hazard light Switch : 32|2@1+ (1.0,0.0) [0.0|3.0]  "" BCM
+
+BO_ 2566875186 State_BCM: 8 BCM
+ SG_ RLS_Brightness_FW : 0|8@1+ (400.0,0.0) [0.0|101200.0]  "" ADCU
+ SG_ RLS_Rain_Intensity : 8|4@1+ (10.0,0.0) [0.0|100.0]  "%" ADCU
+ SG_ ADModeOfBCM : 12|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ PowerOnSwitchOfADCU : 14|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ ActiveSwitchOfADCU : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ AmbientLightStatus : 20|4@1+ (1.0,0.0) [0.0|15.0]  "" ADCU
+ SG_ SeatVibrationDrive : 24|3@1+ (1.0,0.0) [0.0|7.0]  "" ADCU
+ SG_ Left Turn Switch : 28|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Right Turn Switch : 30|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Hazard light Switch : 32|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Fog Light Open Switch : 34|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ Fog Light  Close Switch : 36|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ HeadlampSwitch : 38|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ WasherSwitch : 40|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ WasherMotor : 42|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+
+BO_ 2566834738 DM1_BCM: 42 BCM
+ SG_ ProLmpSt : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" IC,ADCU
+ SG_ AmWrnLmpSt : 2|2@1+ (1.0,0.0) [0.0|3.0]  "" IC,ADCU
+ SG_ ResStopLmpSt : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" IC,ADCU
+ SG_ MalIndLmpSt : 6|2@1+ (1.0,0.0) [0.0|3.0]  "" IC,ADCU
+ SG_ MalIndLmpFls : 14|2@1+ (1.0,0.0) [0.0|3.0]  "Hz" IC,ADCU
+ SG_ SPN1 : 16|8@1+ (1.0,0.0) [0.0|524287.0]  "SPN" IC,ADCU
+ SG_ SPN_SecondByteOfSPN : 24|8@1+ (1.0,0.0) [0.0|524287.0]  "SPN" IC,ADCU
+ SG_ SPNH1 : 37|3@1+ (1.0,0.0) [0.0|524287.0]  "SPN" IC,ADCU
+ SG_ FMI1 : 32|6@1+ (1.0,0.0) [0.0|31.0]  "FMI" IC,ADCU
+ SG_ OC1 : 40|8@1+ (1.0,0.0) [0.0|126.0]  "OC" IC,ADCU
+
+BO_ 2566858290 BCMD_BCM: 8 
+ SG_ PosLmpDrv : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ WsherDrv : 44|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ HiSpdWprDrv : 46|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ LwSpdWprDrv : 48|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ RlecHrnDrv : 52|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ AirHrnDrv : 54|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+
+BO_ 2566877659 STATUS_HOD: 8 HOD
+ SG_ HODStatus : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ HODDiagnose : 4|4@1+ (1.0,0.0) [0.0|15.0]  "" ADCU
+
+BO_ 2566859826 BCMS_BCM: 8 BCM
+ SG_ LftStBltSwt : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU,Gateway(INC)
+
+BO_ 2566859244 LDCMS_DCM: 8 
+ SG_ LeftLockStateSwitch : 26|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ LeftDoorOpenSwitch : 8|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+
+BO_ 2349075358 XBR_ADCU: 8 ADCU
+ SG_ ExternalAccDemand : 0|16@1+ (0.0004883,-15.687) [-15.687|15.687]  "m/s²" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ XBREBIMode : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ XBRPriority : 18|2@1+ (1.0,0.0) [0.0|3.0]  "" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ XBRCtrlMode : 20|2@1+ (1.0,0.0) [0.0|3.0]  "" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ XBRurgency : 24|8@1+ (0.4,0.0) [0.0|100.0]  "%" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ Msgcounter : 56|4@1+ (1.0,0.0) [0.0|15.0]  "count" ABS/EBS/ESC,VECU,BCM,BCA
+ SG_ Msgchecksum : 60|4@1+ (1.0,0.0) [0.0|15.0]  "count" ABS/EBS/ESC,VECU,BCM,BCA
+
+BO_ 2349075420 XBR_rADCU: 8 rADCU
+ SG_ ExternalAccDemand : 0|16@1+ (0.0004883,-15.687) [-15.687|15.687]  "m/s²" VECU,BCM,BCA
+ SG_ XBREBIMode : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,BCA
+ SG_ XBRPriority : 18|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,BCA
+ SG_ XBRCtrlMode : 20|2@1+ (1.0,0.0) [0.0|3.0]  "" VECU,BCM,BCA
+ SG_ XBRurgency : 24|8@1+ (0.4,0.0) [0.0|100.0]  "%" VECU,BCM,BCA
+ SG_ Msgcounter : 56|4@1+ (1.0,0.0) [0.0|15.0]  "count" VECU,BCM,BCA
+ SG_ Msgchecksum : 60|4@1+ (1.0,0.0) [0.0|15.0]  "count" VECU,BCM,BCA
+
+BO_ 2566858311 CIOMD1_CIOM: 8 
+ SG_ Tractor Front Position Light Driver : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Side Position Light Driver : 2|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Rear Position Light Driver : 4|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Left Low Beam Relay Driver : 6|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Right Low Beam Relay Driver : 8|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Left Hight Beam Relay Driver : 10|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Right Hight Beam Relay Driver : 12|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Left auxiliary Hight Beam Relay Driver : 14|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Right auxiliary Hight Beam Relay Driver : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Front-Left Fog Relay Driver : 18|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Front-Right Fog Relay Driver : 20|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Left-front Turn Light Driver : 24|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Right-front Turn Light Driver : 26|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Left-rear Turn Light Driver : 28|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Right-rear Turn Light Driver : 30|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Left-Rear Fog Light Driver : 32|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Right-Rear Fog Light Driver : 34|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Left Reverse Light Driver : 36|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Right Reverse Light Driver : 38|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Brake Light Driver : 40|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+
+BO_ 2566859079 CIOMD2_CIOM: 8 
+ SG_ Trailer Position Light Driver : 8|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Trailer Left Turn Light Driver : 10|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Trailer Right Turn Light Driver : 12|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Trailer Reverse Light Driver : 14|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Trailer Brake Light Driver : 18|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Trailer Rear Fog Light Driver : 22|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Left-Side Turn Light Driver : 24|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+ SG_ Tractor Right-Side Turn Light Driver : 26|2@1+ (1.0,0.0) [0.0|3.0]  "" 
+
+BO_ 2349541938 AEBS2: 8 BCM
+ SG_ AEBSEnSwt : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" AEBS
+ SG_ AEBS2MsgCntr : 56|4@1+ (1.0,0.0) [0.0|15.0]  "" AEBS
+ SG_ AEBS2MsgCrc : 60|4@1+ (1.0,0.0) [0.0|15.0]  "" AEBS
+
+BO_ 2566858823 CIOMS_CIOM: 8 CIOM
+ SG_ Hydraulic Oil Level : 28|2@1+ (1.0,0.0) [0.0|3.0]  "" IC,ADCU
+
+BO_ 2566827568 AIR1_CIOM: 8 IC
+ SG_ ParkingAirPressure : 8|8@1+ (8.0,0.0) [0.0|2000.0]  "kPa" ADCU
+ SG_ FrontAxleAirPressure : 16|8@1+ (8.0,0.0) [0.0|2000.0]  "kPa" ADCU
+ SG_ RearAxleAirPressure : 24|8@1+ (8.0,0.0) [0.0|2000.0]  "kPa" ADCU
+
+BO_ 2566907443 TPMS_01_TPMS: 8 TPMS
+ SG_ TireLocation : 0|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Tyre_temperature : 8|8@1+ (1.0,-40.0) [-40.0|210.0]  "℃" ADCU
+ SG_ Tire_pressure : 16|10@1+ (2.0,0.0) [0.0|2036.0]  "kPa" ADCU
+ SG_ Tyre_pressure_status : 42|4@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Tyre_over_temperature_status : 48|2@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+
+CM_ " ";
+CM_ SG_ 2365547678 CRC8 "校验";
+CM_ SG_ 2365547678 Counter "计数";
+CM_ SG_ 2365547678 AD Mode Enable PS "允许进入自动驾驶模式(ADU_PS)";
+CM_ SG_ 2365547678 AD Mode Engage PS "请求进入自动驾驶模式(ADU_PS)";
+CM_ SG_ 2566874782 GasHornActivationSwitch "";
+CM_ SG_ 2566874782 ElectricHornActivationSwitch "";
+CM_ SG_ 2566874782 ADWiperSwitch "";
+CM_ SG_ 2566874782 ADWiperControl "";
+CM_ SG_ 2566874782 ADHeadlampSwitch "大灯开关";
+CM_ SG_ 2566874782 ADHeadlampControl "大灯使能";
+CM_ SG_ 2566874782 TurnLampControl "";
+CM_ SG_ 2566874782 BrakelightCommand "";
+CM_ SG_ 2566874782 ADWasherSwitch "雨刮清洗开关";
+CM_ SG_ 2566874782 FogLightSwitch "雾灯开关";
+CM_ SG_ 2566874782 AmbientLightDisplayRequest "氛围灯请求";
+CM_ SG_ 2566874782 SeatbeltTightenRequest "安全带控制请求";
+CM_ SG_ 2566874782 DoorEmergencyUnlocking "车门紧急解锁";
+CM_ SG_ 2566874782 SeatVibrationRequest "座椅震动请求";
+CM_ SG_ 2566874782 Hazard light Switch "危险报警灯开关";
+CM_ SG_ 2566875186 RLS_Brightness_FW "The Visible Ambientlight (550nm) measured by Spot FW 可见环境光亮度";
+CM_ SG_ 2566875186 RLS_Rain_Intensity "This signal delivers information about rain intensity: from 0%(no rain) to 100% (very heavy rain) 降雨强度：从0%到100%";
+CM_ SG_ 2566875186 ADModeOfBCM "BCM自动驾驶模式反馈";
+CM_ SG_ 2566875186 PowerOnSwitchOfADCU "AD系统开关";
+CM_ SG_ 2566875186 ActiveSwitchOfADCU "自动驾驶激活开关";
+CM_ SG_ 2566875186 AmbientLightStatus "氛围灯状态";
+CM_ SG_ 2566875186 SeatVibrationDrive "震动座椅状态";
+CM_ SG_ 2566875186 Left Turn Switch "左转向开关";
+CM_ SG_ 2566875186 Right Turn Switch "右转向开关";
+CM_ SG_ 2566875186 Hazard light Switch "警报灯开关";
+CM_ SG_ 2566875186 Fog Light Open Switch "雾灯开开关";
+CM_ SG_ 2566875186 Fog Light  Close Switch "雾灯关开关";
+CM_ SG_ 2566875186 HeadlampSwitch "大灯开关状态（A+车暂不使用）";
+CM_ SG_ 2566875186 WasherSwitch "雨刮清洗开关状态（A+车暂不使用）";
+CM_ SG_ 2566875186 WasherMotor "洗涤电机状态（A+车暂不使用）";
+CM_ SG_ 2566834738 ProLmpSt "Protect Lamp Status";
+CM_ SG_ 2566834738 AmWrnLmpSt "Amber Warning Lamp Status";
+CM_ SG_ 2566834738 ResStopLmpSt "Red Stop Lamp Status";
+CM_ SG_ 2566834738 MalIndLmpSt "Malfunction Indicator Lamp Status";
+CM_ SG_ 2566834738 MalIndLmpFls "Flash Malfunction Indicator Lamp";
+CM_ SG_ 2566834738 SPN1 "";
+CM_ SG_ 2566834738 SPN_SecondByteOfSPN "";
+CM_ SG_ 2566834738 SPNH1 "";
+CM_ SG_ 2566834738 FMI1 "";
+CM_ SG_ 2566834738 OC1 "";
+CM_ SG_ 2566858290 PosLmpDrv "Position Light Driver";
+CM_ SG_ 2566858290 WsherDrv "Wash Driver";
+CM_ SG_ 2566858290 HiSpdWprDrv "Hight Speed Wiper Driver";
+CM_ SG_ 2566858290 LwSpdWprDrv "Low Speed Wiper Driver";
+CM_ SG_ 2566858290 RlecHrnDrv "Electric Horn Relay Driver";
+CM_ SG_ 2566858290 AirHrnDrv "Air Horn Solenoid Valve Driver";
+CM_ SG_ 2566877659 HODStatus "方向盘手握检测";
+CM_ SG_ 2566877659 HODDiagnose "方向盘故障诊断";
+CM_ SG_ 2566859826 LftStBltSwt "Left Seat Belt Switch";
+CM_ SG_ 2566859244 LeftLockStateSwitch "门锁状态";
+CM_ SG_ 2566859244 LeftDoorOpenSwitch "门碰开关";
+CM_ SG_ 2349075358 ExternalAccDemand "";
+CM_ SG_ 2349075358 XBREBIMode "";
+CM_ SG_ 2349075358 XBRPriority "";
+CM_ SG_ 2349075358 XBRCtrlMode "";
+CM_ SG_ 2349075358 XBRurgency "";
+CM_ SG_ 2349075358 Msgcounter "";
+CM_ SG_ 2349075358 Msgchecksum "";
+CM_ SG_ 2349075420 ExternalAccDemand "";
+CM_ SG_ 2349075420 XBREBIMode "";
+CM_ SG_ 2349075420 XBRPriority "";
+CM_ SG_ 2349075420 XBRCtrlMode "";
+CM_ SG_ 2349075420 XBRurgency "";
+CM_ SG_ 2349075420 Msgcounter "";
+CM_ SG_ 2349075420 Msgchecksum "";
+CM_ SG_ 2566858311 Tractor Front Position Light Driver "主车前位置灯";
+CM_ SG_ 2566858311 Tractor Side Position Light Driver "主车侧标志灯";
+CM_ SG_ 2566858311 Tractor Rear Position Light Driver "主车左右后位置灯+示廓灯+牌照灯";
+CM_ SG_ 2566858311 Tractor Left Low Beam Relay Driver "主车左近光灯";
+CM_ SG_ 2566858311 Tractor Right Low Beam Relay Driver "主车右近光灯";
+CM_ SG_ 2566858311 Tractor Left Hight Beam Relay Driver "主车左远光灯";
+CM_ SG_ 2566858311 Tractor Right Hight Beam Relay Driver "主车右远光灯";
+CM_ SG_ 2566858311 Tractor Left auxiliary Hight Beam Relay Driver "主车左辅助远光灯";
+CM_ SG_ 2566858311 Tractor Right auxiliary Hight Beam Relay Driver "主车右辅助远光灯";
+CM_ SG_ 2566858311 Tractor Front-Left Fog Relay Driver "主车左前雾灯";
+CM_ SG_ 2566858311 Tractor Front-Right Fog Relay Driver "主车右前雾灯";
+CM_ SG_ 2566858311 Tractor Left-front Turn Light Driver "主车左前转向灯";
+CM_ SG_ 2566858311 Tractor Right-front Turn Light Driver "主车右前转向灯";
+CM_ SG_ 2566858311 Tractor Left-rear Turn Light Driver "主车左后转向灯";
+CM_ SG_ 2566858311 Tractor Right-rear Turn Light Driver "主车右后转向灯";
+CM_ SG_ 2566858311 Tractor Left-Rear Fog Light Driver "主车左后雾灯";
+CM_ SG_ 2566858311 Tractor Right-Rear Fog Light Driver "主车右后雾灯";
+CM_ SG_ 2566858311 Tractor Left Reverse Light Driver "主车左倒车灯";
+CM_ SG_ 2566858311 Tractor Right Reverse Light Driver "主车右倒车灯";
+CM_ SG_ 2566858311 Tractor Brake Light Driver "主车制动灯驱动信号";
+CM_ SG_ 2566859079 Trailer Position Light Driver "挂车位置灯+牌照灯+侧标志灯";
+CM_ SG_ 2566859079 Trailer Left Turn Light Driver "挂车左转向灯";
+CM_ SG_ 2566859079 Trailer Right Turn Light Driver "挂车右转向灯";
+CM_ SG_ 2566859079 Trailer Reverse Light Driver "挂车左倒车灯";
+CM_ SG_ 2566859079 Trailer Brake Light Driver "挂车左制动灯";
+CM_ SG_ 2566859079 Trailer Rear Fog Light Driver "挂车左后雾灯";
+CM_ SG_ 2566859079 Tractor Left-Side Turn Light Driver "主车左侧转向灯驱动";
+CM_ SG_ 2566859079 Tractor Right-Side Turn Light Driver "主车右侧转向灯驱动";
+CM_ SG_ 2349541938 AEBSEnSwt "Driver activation demand for Advanced Emergency
+Braking System";
+CM_ SG_ 2349541938 AEBS2MsgCntr "AEBS2 message Counter";
+CM_ SG_ 2349541938 AEBS2MsgCrc "AEBS2 message checksum";
+CM_ SG_ 2566858823 Hydraulic Oil Level "转向油罐液位报警状态";
+CM_ SG_ 2566827568 ParkingAirPressure "驻挂回路气压";
+CM_ SG_ 2566827568 FrontAxleAirPressure "前回路气压";
+CM_ SG_ 2566827568 RearAxleAirPressure "后回路气压";
+CM_ SG_ 2566907443 TireLocation "轮胎位置";
+CM_ SG_ 2566907443 Tyre_temperature "轮胎温度";
+CM_ SG_ 2566907443 Tire_pressure "轮胎压力";
+CM_ SG_ 2566907443 Tyre_pressure_status "压力状态";
+CM_ SG_ 2566907443 Tyre_over_temperature_status "温度状态";
+
+BA_DEF_ BO_  "NmMessage" ENUM "No","Yes";
+    BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+    BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+    BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+    BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","Event","IfActive","OnRequest","CA","CE","NoMsgSendType";
+    BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+    BA_DEF_ SG_  "GenSigSendType" ENUM  "cyclic","OnChange","OnWrite","IfActive","OnChangeWithRepetition","OnWriteWithRepetition","IfActiveWithRepetition","NoSigSendType","OnChangeAndIfActive","OnChangeAndIfActiveWithRepetition","CA", "CE","Event";
+    BA_DEF_ SG_  "GenSigStartValue" INT 0 0;
+    BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+    BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 0;
+    BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 0;
+    BA_DEF_ BO_  "GenMsgDelayTime" INT 0 0;
+    BA_DEF_  "DBName" STRING ;
+    BA_DEF_ SG_  "SPN" INT 0 0;
+    BA_DEF_  "NMIdType" ENUM  "0: standard (11 bit, default)","1: extended (29 bit)";
+    BA_DEF_  "NmMessageCount" INT 0 256;
+    BA_DEF_ BU_  "NmNode" ENUM  "No","Yes";
+    BA_DEF_  "NmBaseAddress" HEX 0 536870911;
+    BA_DEF_ SG_  "GenSigEVName" STRING ;
+    BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 10000;
+    BA_DEF_ SG_  "GenSigILSupport" ENUM  "Yes","No";
+    BA_DEF_ BO_  "GenMsgILSupport" ENUM  "Yes","No";
+    BA_DEF_ BO_  "GenMsgRequestable" INT 0 1;
+    BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG";
+    BA_DEF_ BU_  "NodeLayerModules" STRING ;
+    BA_DEF_ BU_  "NmStationAddress" INT 0 255;
+    BA_DEF_ BU_  "NmJ1939AAC" INT 0 1;
+    BA_DEF_ BU_  "NmJ1939IndustryGroup" INT 0 7;
+    BA_DEF_ BU_  "NmJ1939System" INT 0 127;
+    BA_DEF_ BU_  "NmJ1939SystemInstance" INT 0 15;
+    BA_DEF_ BU_  "NmJ1939Function" INT 0 255;
+    BA_DEF_ BU_  "NmJ1939FunctionInstance" INT 0 7;
+    BA_DEF_ BU_  "NmJ1939ECUInstance" INT 0 3;
+    BA_DEF_ BU_  "NmJ1939ManufacturerCode" INT 0 2047;
+    BA_DEF_ BU_  "NmJ1939IdentityNumber" INT 0 2097151;
+    BA_DEF_ BU_  "ECU" STRING ;
+    BA_DEF_  "DatabaseVersion" STRING ;
+    BA_DEF_  "BusType" STRING ;
+    BA_DEF_  "ProtocolType" STRING ;
+
+BA_DEF_DEF_  "NmMessage" "No";
+    BA_DEF_DEF_  "DiagState" "No";
+    BA_DEF_DEF_  "DiagRequest" "No";
+    BA_DEF_DEF_  "DiagResponse" "No";
+    BA_DEF_DEF_  "GenMsgSendType" "cyclic";
+    BA_DEF_DEF_  "GenMsgCycleTime" 0;
+    BA_DEF_DEF_  "GenSigSendType" "cyclic";
+    BA_DEF_DEF_  "GenSigStartValue" 0;
+
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+    BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+    BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+    BA_DEF_DEF_  "GenMsgDelayTime" 0;
+    BA_DEF_DEF_  "DBName" "";
+    BA_DEF_DEF_  "SPN" 0;
+    BA_DEF_DEF_  "NMIdType" "0: standard (11 bit, default)";
+    BA_DEF_DEF_  "NmMessageCount" 128;
+    BA_DEF_DEF_  "NmNode" "No";
+    BA_DEF_DEF_  "NmBaseAddress" 0;
+    BA_DEF_DEF_  "GenSigEVName" "Env@Nodename_@Signame";
+    BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+    BA_DEF_DEF_  "GenSigILSupport" "Yes";
+    BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+    BA_DEF_DEF_  "GenMsgRequestable" 1;
+    BA_DEF_DEF_  "VFrameFormat" "J1939PG";
+    BA_DEF_DEF_  "NodeLayerModules" "oseknm01.dll,CANoeILNLVector.dll,J1939_IL.dll";
+    BA_DEF_DEF_  "NmStationAddress" 254;
+    BA_DEF_DEF_  "NmJ1939AAC" 0;
+    BA_DEF_DEF_  "NmJ1939IndustryGroup" 0;
+    BA_DEF_DEF_  "NmJ1939System" 0;
+    BA_DEF_DEF_  "NmJ1939SystemInstance" 0;
+    BA_DEF_DEF_  "NmJ1939Function" 0;
+    BA_DEF_DEF_  "NmJ1939FunctionInstance" 0;
+    BA_DEF_DEF_  "NmJ1939ECUInstance" 0;
+    BA_DEF_DEF_  "NmJ1939ManufacturerCode" 0;
+    BA_DEF_DEF_  "NmJ1939IdentityNumber" 0;
+    BA_DEF_DEF_  "ECU" "";
+    BA_DEF_DEF_  "DatabaseVersion" "";
+    BA_DEF_DEF_  "BusType" "";
+    BA_DEF_DEF_  "ProtocolType" "";
+BA_ "DBName" "通讯矩阵- 赢彻B1-I-CAN0724";
+    BA_ "BusType" "J1939";
+BA_ "GenMsgCycleTime"BO_ 2365547678 100;
+BA_ "GenMsgCycleTime"BO_ 2566874782 100;
+BA_ "GenMsgCycleTime"BO_ 2566875186 100;
+BA_ "GenMsgCycleTime"BO_ 2566834738 1000;
+BA_ "SPN" SG_ 2566834738 ProLmpSt 987;
+BA_ "SPN" SG_ 2566834738 AmWrnLmpSt 624;
+BA_ "SPN" SG_ 2566834738 ResStopLmpSt 623;
+BA_ "SPN" SG_ 2566834738 MalIndLmpSt 1213;
+BA_ "SPN" SG_ 2566834738 MalIndLmpFls 3038;
+BA_ "SPN" SG_ 2566834738 SPN1 1214;
+BA_ "SPN" SG_ 2566834738 SPN_SecondByteOfSPN 1214;
+BA_ "SPN" SG_ 2566834738 SPNH1 1214;
+BA_ "SPN" SG_ 2566834738 FMI1 1215;
+BA_ "SPN" SG_ 2566834738 OC1 1216;
+BA_ "GenMsgCycleTime"BO_ 2566858290 100;
+BA_ "GenMsgCycleTime"BO_ 2566877659 100;
+BA_ "GenMsgCycleTime"BO_ 2566859826 100;
+BA_ "GenMsgCycleTime"BO_ 2566859244 100;
+BA_ "GenMsgCycleTime"BO_ 2349075358 20;
+BA_ "SPN" SG_ 2349075358 ExternalAccDemand 2920;
+BA_ "SPN" SG_ 2349075358 XBREBIMode 2914;
+BA_ "SPN" SG_ 2349075358 XBRPriority 2915;
+BA_ "SPN" SG_ 2349075358 XBRCtrlMode 2916;
+BA_ "SPN" SG_ 2349075358 XBRurgency 4099;
+BA_ "SPN" SG_ 2349075358 Msgcounter 3189;
+BA_ "SPN" SG_ 2349075358 Msgchecksum 3188;
+BA_ "GenMsgCycleTime"BO_ 2349075420 20;
+BA_ "SPN" SG_ 2349075420 ExternalAccDemand 2920;
+BA_ "SPN" SG_ 2349075420 XBREBIMode 2914;
+BA_ "SPN" SG_ 2349075420 XBRPriority 2915;
+BA_ "SPN" SG_ 2349075420 XBRCtrlMode 2916;
+BA_ "SPN" SG_ 2349075420 XBRurgency 4099;
+BA_ "SPN" SG_ 2349075420 Msgcounter 3189;
+BA_ "SPN" SG_ 2349075420 Msgchecksum 3188;
+BA_ "GenMsgCycleTime"BO_ 2566858311 100;
+BA_ "GenMsgCycleTime"BO_ 2566859079 100;
+BA_ "GenMsgCycleTime"BO_ 2349541938 50;
+BA_ "SPN" SG_ 2349541938 AEBSEnSwt 5681;
+BA_ "SPN" SG_ 2349541938 AEBS2MsgCntr 5682;
+BA_ "SPN" SG_ 2349541938 AEBS2MsgCrc 5683;
+BA_ "GenMsgCycleTime"BO_ 2566858823 100;
+BA_ "GenMsgCycleTime"BO_ 2566827568 1000;
+BA_ "SPN" SG_ 2566827568 ParkingAirPressure 1086;
+BA_ "SPN" SG_ 2566827568 FrontAxleAirPressure 1087;
+BA_ "SPN" SG_ 2566827568 RearAxleAirPressure 1088;
+BA_ "GenMsgCycleTime"BO_ 2566907443 200;
+
+VAL_ 2365547678 AD Mode Enable PS 0 "inhabit" 1 "enable" 2 "fail" 3 "reserve" ;
+VAL_ 2365547678 AD Mode Engage PS 0 "inhabit" 1 "engage" 2 "reserve" 3 "reserve" ;
+VAL_ 2566874782 GasHornActivationSwitch 0 "气喇叭关" 1 "气喇叭开" ;
+VAL_ 2566874782 ElectricHornActivationSwitch 0 "电喇叭关" 1 "电喇叭开" ;
+VAL_ 2566874782 ADWiperSwitch 0 "关" 1 "开" ;
+VAL_ 2566874782 ADWiperControl 0 "关" 1 "1档" 2 "2档" 3 "3档" ;
+VAL_ 2566874782 ADHeadlampSwitch 0 "关" 1 "开" ;
+VAL_ 2566874782 ADHeadlampControl 0 "灯光全关" 1 "开近光灯、位置灯" 2 "开近光灯、位置灯、远光灯" ;
+VAL_ 2566874782 BrakelightCommand 0 "关" 1 "开" ;
+VAL_ 2566874782 ADWasherSwitch 0 "关" 1 "开" ;
+VAL_ 2566874782 FogLightSwitch 0 "雾灯关" 1 "开前雾灯" 2 "开前后雾灯" 3 "预留" ;
+VAL_ 2566874782 AmbientLightDisplayRequest 0 "nodisplay" 1 "ADenablestatuscoloron" 2 "ADengagestatuscoloron" 3 "ADfallbackstatuscoloron" 4 "ADfallbackstatuscolorbreathing" ;
+VAL_ 2566874782 SeatbeltTightenRequest 0 "norequest" 1 "tighten" 2 "reserved" 3 "reserved" ;
+VAL_ 2566874782 DoorEmergencyUnlocking 0 "norequest" 1 "emergentunlock" ;
+VAL_ 2566874782 Hazard light Switch 0 "off" 1 "on" ;
+VAL_ 2566875186 ADModeOfBCM 0 "NotReady" 1 "Ready" 2 "Engaged" 3 "fault" ;
+VAL_ 2566875186 PowerOnSwitchOfADCU 0 "nopress" 1 "pressed" 3 "stick" ;
+VAL_ 2566875186 AmbientLightStatus 0 "nodisplay" 1 "ADenablestatuscoloron" 2 "ADengagestatuscoloron" 3 "ADfallbackstatuscoloron" 4 "ADfallbackstatuscolorbreathing" ;
+VAL_ 2566875186 Left Turn Switch 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566875186 Right Turn Switch 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566875186 Hazard light Switch 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566875186 Fog Light Open Switch 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566875186 Fog Light  Close Switch 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566875186 HeadlampSwitch 0 "关" 1 "开" ;
+VAL_ 2566875186 WasherSwitch 0 "关" 1 "开" ;
+VAL_ 2566875186 WasherMotor 0 "关" 1 "开" ;
+VAL_ 2566834738 ProLmpSt 0 "LampOff" 1 "LampOn" ;
+VAL_ 2566834738 AmWrnLmpSt 0 "LampOff" 1 "LampOn" ;
+VAL_ 2566834738 ResStopLmpSt 0 "LampOff" 1 "LampOn" ;
+VAL_ 2566834738 MalIndLmpSt 0 "LampOff" 1 "LampOn" ;
+VAL_ 2566858290 PosLmpDrv 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858290 WsherDrv 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858290 HiSpdWprDrv 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858290 LwSpdWprDrv 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858290 RlecHrnDrv 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858290 AirHrnDrv 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566877659 HODStatus 0 "故障，无法检测；" 1 "未握方向盘" 2 "单手握方向盘" 3 "双手握方向盘" ;
+VAL_ 2566877659 HODDiagnose 0 "INIT（INIT_DIAG）初始化" 1 "Rerserved" 2 "HOSWD_READY" 3 "Calibrationerror（标定参数错误）" 4 "Systemerror（过压、欠压和线路错误）" 5 "NonPermanenterror（非永久性错误，可很快恢复）" 6 "Rerserved" 7 "Rerserved" ;
+VAL_ 2566859826 LftStBltSwt 0 "Off" 1 "On" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566859244 LeftLockStateSwitch 0 "Off" 1 "On" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566859244 LeftDoorOpenSwitch 0 "Off" 1 "On" 2 "Error" 3 "Notavailable" ;
+VAL_ 2349075358 XBREBIMode 0 "NoEnduranceBrakeIntegrationallowed" 1 "OnlyEnduranceBrakesallowed" 2 "EnduranceBrakeIntegrationallowed" 3 "Notdefined" ;
+VAL_ 2349075358 XBRPriority 0 "Highestpriority" 1 "Highpriority" 2 "Mediumpriority" 3 "Lowpriority" ;
+VAL_ 2349075358 XBRCtrlMode 0 "Overridedisabled" 1 "Accelerationcontrolwithadditionmode" 2 "Accelerationcontrolwithmaximummode" 3 "Notdefined" ;
+VAL_ 2349075420 XBREBIMode 0 "NoEnduranceBrakeIntegrationallowed" 1 "OnlyEnduranceBrakesallowed" 2 "EnduranceBrakeIntegrationallowed" 3 "Notdefined" ;
+VAL_ 2349075420 XBRPriority 0 "Highestpriority" 1 "Highpriority" 2 "Mediumpriority" 3 "Lowpriority" ;
+VAL_ 2349075420 XBRCtrlMode 0 "Overridedisabled" 1 "Accelerationcontrolwithadditionmode" 2 "Accelerationcontrolwithmaximummode" 3 "Notdefined" ;
+VAL_ 2566858311 Tractor Front Position Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Side Position Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Rear Position Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Left Low Beam Relay Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Right Low Beam Relay Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Left Hight Beam Relay Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Right Hight Beam Relay Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Left auxiliary Hight Beam Relay Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Right auxiliary Hight Beam Relay Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Front-Left Fog Relay Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Front-Right Fog Relay Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Left-front Turn Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Right-front Turn Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Left-rear Turn Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Right-rear Turn Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Left-Rear Fog Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Right-Rear Fog Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Left Reverse Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Right Reverse Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566858311 Tractor Brake Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566859079 Trailer Position Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566859079 Trailer Left Turn Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566859079 Trailer Right Turn Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566859079 Trailer Reverse Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566859079 Trailer Brake Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566859079 Trailer Rear Fog Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566859079 Tractor Left-Side Turn Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566859079 Tractor Right-Side Turn Light Driver 0 "Off" 1 "ON" 2 "Error" 3 "Notavailable" ;
+VAL_ 2349541938 AEBSEnSwt 0 "thedriverdoesnotwanttheAdvancedEmergencyBrakingSystemtowarnorinterveneatanytime(deactivationofsystem)" 1 "thedriverwantstheAdvancedEmergencyBrakingSystemtowarnorinterveneifnecessary(nodeactivationofsystem)" 2 "reserved" 3 "don't'care/takenoaction" ;
+VAL_ 2566907443 TireLocation 23 "第一轴左轮" 25 "第一轴右轮" 38 "第二轴左外轮" 39 "第二轴左内轮" 41 "第二轴右内轮" 42 "第二轴右外轮" 54 "第三轴左外轮" 55 "第二轴左内轮" 57 "第三轴右内轮" 58 "第三轴右外轮" 8 "备胎" ;
+VAL_ 2566907443 Tyre_pressure_status 0 "正常压力范围" 2 "高压" 5 "低压" 6 "超低压" 15 "Notavailable" ;
+VAL_ 2566907443 Tyre_over_temperature_status 0 "未检测到高温状态" 1 "检测到高温状态" 2 "Error" 3 "Notavailable" ;
+

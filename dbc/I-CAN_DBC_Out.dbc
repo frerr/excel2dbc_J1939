@@ -1,0 +1,256 @@
+VERSION ""
+
+
+NS_ : 
+        NS_DESC_
+            CM_
+            BA_DEF_
+            BA_
+            VAL_
+            CAT_DEF_
+            CAT_
+            FILTER
+            BA_DEF_DEF_
+            EV_DATA_
+            ENVVAR_DATA_
+            SGTYPE_
+            SGTYPE_VAL_
+            BA_DEF_SGTYPE_
+            BA_SGTYPE_
+            SIG_TYPE_REF_
+            VAL_TABLE_
+            SIG_GROUP_
+            SIG_VALTYPE_
+            SIGTYPE_VALTYPE_
+            BO_TX_BU_
+            BA_DEF_REL_
+            BA_REL_
+            BA_DEF_DEF_REL_
+            BU_SG_REL_
+            BU_EV_REL_
+            BU_BO_REL_
+            SG_MUL_VAL_
+
+BS_:
+
+BU_: EECU VGT TCU SCU ABSEBSESC Retarder EPSHSCU IC DCDC BBM Display AEBS LKA ELCECAS HVAP VECU HCU BCM TPMS PAC ACM AVM CIOM LSCU EPB FNOx RNox ACU HCCB SCM ADCU UQS ROBD TBOX Charge RKE DFDDFMS LDWS FCWS BSD DCM VDRBeiDou EMCU MCUAxle BMS CDC PEPS YRS Exhaust Ret Engine Ret AFS CCM CVG EAC SAS Tacho IVI ATC DST Camera Infotainment EHPS GatewayINC HOD BCA rADCU rEHPS IVIBOX 
+
+
+BO_ 2365547678 AutoDrive_ADCU: 8 ADCU
+ SG_ CRC8 : 0|8@1+ (1.0,0.0) [0.0|255.0]  "" SCU,ABSEBSESC,VECU,BCM,IVI,EHPS,BCA,rEHPS
+ SG_ Counter : 8|4@1+ (1.0,0.0) [0.0|15.0]  "" SCU,ABSEBSESC,VECU,BCM,IVI,EHPS,BCA,rEHPS
+ SG_ AD_Mode_Enable_PS : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" SCU,ABSEBSESC,VECU,BCM,IVI,EHPS,BCA,rEHPS
+ SG_ AD_Mode_Engage_PS : 20|2@1+ (1.0,0.0) [0.0|3.0]  "" SCU,ABSEBSESC,VECU,BCM,IVI,EHPS,BCA,rEHPS
+
+BO_ 2566907443 TPMS_01_TPMS: 8 TPMS
+ SG_ TireLocation : 0|8@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Tyre_temperature : 8|8@1+ (1.0,-40.0) [-40.0|210.0]  "℃" ADCU
+ SG_ Tire_pressure : 16|10@1+ (2.0,0.0) [0.0|2036.0]  "kPa" ADCU
+ SG_ Tyre_pressure_status : 42|4@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+ SG_ Tyre_over_temperature_status : 48|2@1+ (1.0,0.0) [0.0|255.0]  "" ADCU
+
+BO_ 2365484270 TCO1_IC: 8 Tacho
+ SG_ TachographVehicleSpeed : 48|16@1+ (0.00390625,0.0) [0.0|250.996]  "km/h" ADCU
+
+BO_ 2566870288 PROP_IT3_TX_RED: 8 Retarder
+ SG_ BremsomatSpeed : 8|8@1+ (0.5,0.0) [0.0|125.0]  "km/h" ADCU
+
+BO_ 2566842094 TD_TBOX: 8 TBOX
+ SG_ Seconds : 0|8@1+ (0.25,0.0) [0.0|59.75]  "" ABSEBSESC,AEBS,VECU,BCM,DFDDFMS,DCM,Infotainment
+ SG_ Minutes : 8|8@1+ (1.0,0.0) [0.0|59.0]  "" ABSEBSESC,AEBS,VECU,BCM,DFDDFMS,DCM,Infotainment
+ SG_ Hours : 16|8@1+ (1.0,0.0) [0.0|23.0]  "" ABSEBSESC,AEBS,VECU,BCM,DFDDFMS,DCM,Infotainment
+ SG_ Month : 24|8@1+ (1.0,0.0) [1.0|12.0]  "" ABSEBSESC,AEBS,VECU,BCM,DFDDFMS,DCM,Infotainment
+ SG_ Day : 32|8@1+ (0.25,0.0) [0.25|31.75]  "" ABSEBSESC,AEBS,VECU,BCM,DFDDFMS,DCM,Infotainment
+ SG_ Year : 40|8@1+ (1.0,1985.0) [1985.0|2235.0]  "" ABSEBSESC,AEBS,VECU,BCM,DFDDFMS,DCM,Infotainment
+ SG_ LocalMinuteOffset : 48|8@1+ (1.0,-125.0) [-125.0|125.0]  "" ABSEBSESC,AEBS,VECU,BCM,DFDDFMS,DCM,Infotainment
+ SG_ LocalHourOffset : 56|8@1+ (1.0,-125.0) [-125.0|125.0]  "" ABSEBSESC,AEBS,VECU,BCM,DFDDFMS,DCM,Infotainment
+
+BO_ 2566832622 VDHR_IC: 8 IC
+ SG_ HighResolutionTotalVehicleDistance : 0|32@1+ (0.005,0.0) [0.0|21055406.0]  "km" ABSEBSESC,AEBS,VECU
+ SG_ HighResolutionTripDistance : 32|32@1+ (0.005,0.0) [0.0|21055406.0]  "km" ABSEBSESC,AEBS,VECU
+
+BO_ 2566838551 AUXIO1_IC: 8 IC
+ SG_ TrailerABSFullyOperational : 10|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ TrailerABSDetected : 12|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ TrailerConnected : 14|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+
+BO_ 2566875186 State_BCM: 8 BCM
+ SG_ PowerOnSwitchOfADCU : 14|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+ SG_ ActiveSwitchOfADCU : 16|2@1+ (1.0,0.0) [0.0|3.0]  "" ADCU
+
+BO_ 2566877342 HMI_ADCU: 8 ADCU
+ SG_ MessageDisplayRequest : 0|8@1+ (1.0,0.0) [0.0|255.0]  "" IVI
+ SG_ VoiceReminderRequest : 8|8@1+ (1.0,0.0) [0.0|255.0]  "" IVI
+ SG_ TelltaleDisplayRequest : 16|4@1+ (1.0,0.0) [0.0|15.0]  "" IVI
+
+BO_ 2566866079 HMIRequest_IVIBOX: 8 IVIBOX
+ SG_ AudioRequest : 0|2@1+ (1.0,0.0) [0.0|3.0]  "" IVI
+ SG_ ADPageJumpRequest : 2|1@1+ (1.0,0.0) [0.0|1.0]  "" IVI
+ SG_ ADPageLVDSReady : 3|1@1+ (1.0,0.0) [0.0|1.0]  "" IVI
+
+BO_ 2566866216 DISPLAY_IVI: 8 IVI
+ SG_ Current_volume  : 0|8@1+ (1.0,0.0) [0.0|255.0]  "" IVIBOX
+ SG_ CurrentADPage : 8|1@1+ (1.0,0.0) [0.0|1.0]  "" IVIBOX
+ SG_ Audio_request_feedback : 9|1@1+ (1.0,0.0) [0.0|1.0]  "" IVIBOX
+
+CM_ " ";
+CM_ SG_ 2365547678 CRC8 "校验";
+CM_ SG_ 2365547678 Counter "计数";
+CM_ SG_ 2365547678 AD_Mode_Enable_PS "允许进入自动驾驶模式(ADU_PS)";
+CM_ SG_ 2365547678 AD_Mode_Engage_PS "请求进入自动驾驶模式(ADU_PS)";
+CM_ SG_ 2566907443 TireLocation "轮胎位置";
+CM_ SG_ 2566907443 Tyre_temperature "轮胎温度";
+CM_ SG_ 2566907443 Tire_pressure "轮胎压力";
+CM_ SG_ 2566907443 Tyre_pressure_status "压力状态";
+CM_ SG_ 2566907443 Tyre_over_temperature_status "温度状态";
+CM_ SG_ 2365484270 TachographVehicleSpeed "";
+CM_ SG_ 2566870288 BremsomatSpeed "Set speed of the Bremsomat. Value is set to 0km/h, when Bremsomat is switched off.";
+CM_ SG_ 2566842094 Seconds "Factor:0.25s｜Offset: 0∣Range:0~59.75s";
+CM_ SG_ 2566842094 Minutes "Factor:1min｜Offset: 0∣Range:0~59mins";
+CM_ SG_ 2566842094 Hours "Factor:1hr｜Offset: 0∣Range:0~23hr";
+CM_ SG_ 2566842094 Month "Factor:25days｜Offset: 0∣Range:0~31.75days";
+CM_ SG_ 2566842094 Day "Factor:1month｜Offset: 0∣Range:1~12months";
+CM_ SG_ 2566842094 Year "Factor:1year｜Offset: 1985year∣Range:1985~2235years";
+CM_ SG_ 2566842094 LocalMinuteOffset "Factor:1min｜Offset: -125min∣Range:-59~59mins";
+CM_ SG_ 2566842094 LocalHourOffset "Factor:1hr｜Offset: -125hr∣Range:-23~23hr";
+CM_ SG_ 2566832622 HighResolutionTotalVehicleDistance "Factor:5m｜Offset: 0∣Range:0~21055406km";
+CM_ SG_ 2566832622 HighResolutionTripDistance "High Resolution Trip Distance";
+CM_ SG_ 2566838551 TrailerABSFullyOperational "";
+CM_ SG_ 2566838551 TrailerABSDetected "";
+CM_ SG_ 2566838551 TrailerConnected "";
+CM_ SG_ 2566875186 PowerOnSwitchOfADCU "AD系统开关";
+CM_ SG_ 2566875186 ActiveSwitchOfADCU "自动驾驶激活开关";
+CM_ SG_ 2566877342 MessageDisplayRequest "自动驾驶文字和报警音提醒请求";
+CM_ SG_ 2566877342 VoiceReminderRequest "自动驾驶状态语音播报请求";
+CM_ SG_ 2566877342 TelltaleDisplayRequest "自动驾驶状态指示灯请求";
+CM_ SG_ 2566866079 AudioRequest "扬声器打断请求";
+CM_ SG_ 2566866079 ADPageJumpRequest "自动驾驶界面请求";
+CM_ SG_ 2566866079 ADPageLVDSReady "自动驾驶画面准备状态";
+CM_ SG_ 2566866216 Current_volume  "IVI当前音量";
+CM_ SG_ 2566866216 CurrentADPage "自动驾驶界面状态";
+CM_ SG_ 2566866216 Audio_request_feedback "扬声器打断请求响应";
+
+BA_DEF_ BO_  "NmMessage" ENUM "No","Yes";
+    BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+    BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+    BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+    BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","Event","IfActive","OnRequest","CA","CE","NoMsgSendType";
+    BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+    BA_DEF_ SG_  "GenSigSendType" ENUM  "cyclic","OnChange","OnWrite","IfActive","OnChangeWithRepetition","OnWriteWithRepetition","IfActiveWithRepetition","NoSigSendType","OnChangeAndIfActive","OnChangeAndIfActiveWithRepetition","CA", "CE","Event";
+    BA_DEF_ SG_  "GenSigStartValue" INT 0 0;
+    BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+    BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 0;
+    BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 0;
+    BA_DEF_ BO_  "GenMsgDelayTime" INT 0 0;
+    BA_DEF_  "DBName" STRING ;
+    BA_DEF_ SG_  "SPN" INT 0 0;
+    BA_DEF_  "NMIdType" ENUM  "0: standard (11 bit, default)","1: extended (29 bit)";
+    BA_DEF_  "NmMessageCount" INT 0 256;
+    BA_DEF_ BU_  "NmNode" ENUM  "No","Yes";
+    BA_DEF_  "NmBaseAddress" HEX 0 536870911;
+    BA_DEF_ SG_  "GenSigEVName" STRING ;
+    BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 10000;
+    BA_DEF_ SG_  "GenSigILSupport" ENUM  "Yes","No";
+    BA_DEF_ BO_  "GenMsgILSupport" ENUM  "Yes","No";
+    BA_DEF_ BO_  "GenMsgRequestable" INT 0 1;
+    BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG";
+    BA_DEF_ BU_  "NodeLayerModules" STRING ;
+    BA_DEF_ BU_  "NmStationAddress" INT 0 255;
+    BA_DEF_ BU_  "NmJ1939AAC" INT 0 1;
+    BA_DEF_ BU_  "NmJ1939IndustryGroup" INT 0 7;
+    BA_DEF_ BU_  "NmJ1939System" INT 0 127;
+    BA_DEF_ BU_  "NmJ1939SystemInstance" INT 0 15;
+    BA_DEF_ BU_  "NmJ1939Function" INT 0 255;
+    BA_DEF_ BU_  "NmJ1939FunctionInstance" INT 0 7;
+    BA_DEF_ BU_  "NmJ1939ECUInstance" INT 0 3;
+    BA_DEF_ BU_  "NmJ1939ManufacturerCode" INT 0 2047;
+    BA_DEF_ BU_  "NmJ1939IdentityNumber" INT 0 2097151;
+    BA_DEF_ BU_  "ECU" STRING ;
+    BA_DEF_  "DatabaseVersion" STRING ;
+    BA_DEF_  "BusType" STRING ;
+    BA_DEF_  "ProtocolType" STRING ;
+
+BA_DEF_DEF_  "NmMessage" "No";
+    BA_DEF_DEF_  "DiagState" "No";
+    BA_DEF_DEF_  "DiagRequest" "No";
+    BA_DEF_DEF_  "DiagResponse" "No";
+    BA_DEF_DEF_  "GenMsgSendType" "cyclic";
+    BA_DEF_DEF_  "GenMsgCycleTime" 0;
+    BA_DEF_DEF_  "GenSigSendType" "cyclic";
+    BA_DEF_DEF_  "GenSigStartValue" 0;
+
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+    BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+    BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+    BA_DEF_DEF_  "GenMsgDelayTime" 0;
+    BA_DEF_DEF_  "DBName" "";
+    BA_DEF_DEF_  "SPN" 0;
+    BA_DEF_DEF_  "NMIdType" "0: standard (11 bit, default)";
+    BA_DEF_DEF_  "NmMessageCount" 128;
+    BA_DEF_DEF_  "NmNode" "No";
+    BA_DEF_DEF_  "NmBaseAddress" 0;
+    BA_DEF_DEF_  "GenSigEVName" "Env@Nodename_@Signame";
+    BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+    BA_DEF_DEF_  "GenSigILSupport" "Yes";
+    BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+    BA_DEF_DEF_  "GenMsgRequestable" 1;
+    BA_DEF_DEF_  "VFrameFormat" "J1939PG";
+    BA_DEF_DEF_  "NodeLayerModules" "oseknm01.dll,CANoeILNLVector.dll,J1939_IL.dll";
+    BA_DEF_DEF_  "NmStationAddress" 254;
+    BA_DEF_DEF_  "NmJ1939AAC" 0;
+    BA_DEF_DEF_  "NmJ1939IndustryGroup" 0;
+    BA_DEF_DEF_  "NmJ1939System" 0;
+    BA_DEF_DEF_  "NmJ1939SystemInstance" 0;
+    BA_DEF_DEF_  "NmJ1939Function" 0;
+    BA_DEF_DEF_  "NmJ1939FunctionInstance" 0;
+    BA_DEF_DEF_  "NmJ1939ECUInstance" 0;
+    BA_DEF_DEF_  "NmJ1939ManufacturerCode" 0;
+    BA_DEF_DEF_  "NmJ1939IdentityNumber" 0;
+    BA_DEF_DEF_  "ECU" "";
+    BA_DEF_DEF_  "DatabaseVersion" "";
+    BA_DEF_DEF_  "BusType" "";
+    BA_DEF_DEF_  "ProtocolType" "";
+BA_ "DBName" "通讯矩阵- 赢彻B1-I-CAN0724";
+    BA_ "BusType" "J1939";
+BA_ "GenMsgCycleTime"BO_ 2365547678 100;
+BA_ "GenMsgCycleTime"BO_ 2566907443 200;
+BA_ "GenMsgCycleTime"BO_ 2365484270 50;
+BA_ "SPN" SG_ 2365484270 TachographVehicleSpeed 1624;
+BA_ "GenMsgCycleTime"BO_ 2566870288 100;
+BA_ "GenMsgCycleTime"BO_ 2566842094 1000;
+BA_ "SPN" SG_ 2566842094 Seconds 959;
+BA_ "SPN" SG_ 2566842094 Minutes 960;
+BA_ "SPN" SG_ 2566842094 Hours 961;
+BA_ "SPN" SG_ 2566842094 Month 963;
+BA_ "SPN" SG_ 2566842094 Day 962;
+BA_ "SPN" SG_ 2566842094 Year 964;
+BA_ "SPN" SG_ 2566842094 LocalMinuteOffset 1601;
+BA_ "SPN" SG_ 2566842094 LocalHourOffset 1602;
+BA_ "GenMsgCycleTime"BO_ 2566832622 1000;
+BA_ "SPN" SG_ 2566832622 HighResolutionTotalVehicleDistance 917;
+BA_ "SPN" SG_ 2566832622 HighResolutionTripDistance 918;
+BA_ "GenMsgCycleTime"BO_ 2566838551 100;
+BA_ "GenMsgCycleTime"BO_ 2566875186 100;
+BA_ "GenMsgCycleTime"BO_ 2566877342 100;
+BA_ "GenMsgCycleTime"BO_ 2566866079 100;
+BA_ "GenMsgCycleTime"BO_ 2566866216 1000;
+
+VAL_ 2365547678 AD_Mode_Enable_PS 0 "inhabit" 1 "enable" 2 "fail" 3 "reserve" ;
+VAL_ 2365547678 AD_Mode_Engage_PS 0 "inhabit" 1 "engage" 2 "reserve" 3 "reserve" ;
+VAL_ 2566907443 TireLocation 23 "第一轴左轮" 25 "第一轴右轮" 38 "第二轴左外轮" 39 "第二轴左内轮" 41 "第二轴右内轮" 42 "第二轴右外轮" 54 "第三轴左外轮" 55 "第二轴左内轮" 57 "第三轴右内轮" 58 "第三轴右外轮" 8 "备胎" ;
+VAL_ 2566907443 Tyre_pressure_status 0 "正常压力范围" 2 "高压" 5 "低压" 6 "超低压" 15 "Notavailable" ;
+VAL_ 2566907443 Tyre_over_temperature_status 0 "未检测到高温状态" 1 "检测到高温状态" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566838551 TrailerABSFullyOperational 0 "TrailerABSnotfullyoperational" 1 "TrailerABSfullyoperational" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566838551 TrailerABSDetected 0 "TrailerABSnotdetected" 1 "TrailerABSdetected" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566838551 TrailerConnected 0 "Trailernotconnected" 1 "Trailerconnected" 2 "Error" 3 "Notavailable" ;
+VAL_ 2566875186 PowerOnSwitchOfADCU 0 "nopress" 1 "pressed" 3 "stick" ;
+VAL_ 2566875186 ActiveSwitchOfADCU 0 "nopress" 1 "pressed" 3 "stick" ;
+VAL_ 2566877342 MessageDisplayRequest 0 "不显示" 1 "xxx" 2 "xxx" 3 "xxx" 4 "xxx" 5 "xxx" 70 "xxx" ;
+VAL_ 2566877342 VoiceReminderRequest 0 "不显示" 1 "xxx" 2 "xxx" 3 "xxx" 4 "xxx" 5 "xxx" 70 "xxx" ;
+VAL_ 2566877342 TelltaleDisplayRequest 0 "不显示" 1 "不可用状态灯常亮，颜色暂定灰色；" 2 "待命状态灯常亮，颜色暂定白色；" 3 "待命状态灯闪烁，0.5son0.5soff；" 4 "激活状态灯常亮，颜色暂定绿色；" 5 "激活状态灯闪烁，0.5sono.5soff；" 6 "故障状态灯常亮，颜色暂定红色；" 7 "故障状态灯闪烁，0.25son0.25soff；" ;
+VAL_ 2566866079 AudioRequest 0 "norequest" 1 "navigationvoiceremind（导航语音播报）" 2 "emergencycall（ecall呼叫通话）" 3 "reserved" ;
+VAL_ 2566866079 ADPageJumpRequest 0 "norequest" 1 "request" ;
+VAL_ 2566866079 ADPageLVDSReady 0 "notready" 1 "ready" ;
+VAL_ 2566866216 CurrentADPage 0 "notatADpage" 1 "atADpage" ;
+VAL_ 2566866216 Audio_request_feedback 0 "deny（拒绝IVIBox的音频功能请求）" 1 "accept（允许IVIBox使用音频功能）" ;
+
