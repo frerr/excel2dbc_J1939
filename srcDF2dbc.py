@@ -35,13 +35,21 @@
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 '''DFdbc excel to DBCfile convertor libraries.'''
+import xlrd
+import re
+import glob
+from fractions import Fraction
+
+def strfra2double(str):
+    if '/' in str:
+        fraction = str.split('/')
+        numerator = fraction[0]
+        denominator = fraction[1]
+        return float(Fraction(int(numerator),int(denominator)))
+    else:
+        return float(str)
 
 def excel2dbc(fin,sheet_name):
-    #################################################
-    import xlrd
-    import re
-    import glob
-
     #################################################
     fout = 'Defalt_out.dbc'
 
@@ -54,7 +62,7 @@ def excel2dbc(fin,sheet_name):
         # 通过index获得工作表info
         table = data.sheet_by_name(sheet_name)
 
-        fout = sheet_name + "_DBC_Out.dbc"
+        fout = sheet_name + "_DBC_Inceptio_Out.dbc"
 
         print(sheet_name+" 总行数：" + str(table.nrows))
         print(sheet_name+ "总列数：" + str(table.ncols))
@@ -134,6 +142,7 @@ def excel2dbc(fin,sheet_name):
         fdbc.write(newContext)
         Node = table.row_values(0)[30:]
         for Nodename in Node:
+            Nodename = re.sub(r'\W','',Nodename)
             newContext = Nodename+' '
             fdbc.write(newContext)
         newContext="\n\n"
@@ -143,7 +152,6 @@ def excel2dbc(fin,sheet_name):
     else:
         print("Read Node Name Successfully!")
     ################BO_报文###########################
-    
     print("print noRow "+str(table.nrows))
     noRow = 2
     spaStr = " "
@@ -157,7 +165,7 @@ def excel2dbc(fin,sheet_name):
     Factor = 1.00
     Offset = 0.00
     Real_min_value = 0.00
-    Real_max_value = 0.00
+    Real_max_value = 16.00
     Unit = ""
 
     while noRow < table.nrows: #每一行遍历
@@ -166,41 +174,75 @@ def excel2dbc(fin,sheet_name):
 
         try: 
             if noRowData[2] != "":
-                #获取收发节点关系
                 Send = ""
-                Rev = ""
+                Rev = ""    
+                #获取收发节点关系
                 for index, i in enumerate(table.row_values(noRow)[30:]):
                     if i == 'S'or i == 's':
-                        Send = table.row_values(0)[30+index]
+                        Send = re.sub(r'\W','',table.row_values(0)[30+index])
                     elif i == 'r'or i == 'R':
-                        Rev += table.row_values(0)[30+index] + ','
-                Rev = Rev[:-1]
+                        Rev += re.sub(r'\W','',table.row_values(0)[30+index]) + ','
+                if Rev != "":
+                    Rev = Rev[:-1]
+
+                if (Send =="" and Rev != "") or (Send !="" and Rev == ""):
+                    Send = "Vector_XXX"
+                    Rev = "Vector_XXX"
+                    raise ValueError("Rev and Send not matched..")
+                elif (Send =="" and Rev == ""):
+                    Send = "Vector_XXX"
+                    Rev = "Vector_XXX"
+        except ValueError:
+            print(noRowData[0]+": Rev and Send not matched...default")
         except:
-            print(noRowData[0]+" Node Rev/Send Relationship Error!")
+            print(noRowData[0]+": Node Rev/Send Relationship Error!")
+        else:
+            print("Read Rev/Send Relationship Successfully!")
 
         try:
-            chID = noRowData[2] #第三列为MessageID
-            intID = int(chID,16)+int('0x80000000',16) #？？？？？没懂为啥有一位置1了，但dbc文件里实际置了1
-            Message_name = noRowData[0]
-            DLC = int(noRowData[6])
-            #BO_ Message Definition
-            newContext="\n"
-            fdbc.write(newContext)
-            newContext = "BO_ " + str(intID) + spaStr + Message_name + ":" + spaStr + str(DLC) +spaStr +Send+ "\n"
-            print("newContext"+newContext)
-            fdbc.write(newContext)
+            if noRowData[2] != "":
+                chID = noRowData[2] #第三列为MessageID
+                intID = int(chID,16)+int('0x80000000',16) #？？？？？没懂为啥有一位置1了，但dbc文件里实际置了1
+                Message_name = noRowData[0]
+                Message_name = re.sub(r'\W','',Message_name)
+                DLC = int(noRowData[6])
+                #BO_ Message Definition
+                newContext="\n"
+                fdbc.write(newContext)
+                newContext = "BO_ " + str(intID) + spaStr + Message_name + ":" + spaStr + str(DLC) +spaStr +Send+ "\n"
+                print("newContext"+newContext)
+                fdbc.write(newContext)
         except:
             print(Message_name+"Get Message Info Error!")
 
         try:
-            if noRowData[7] != "":
+            if noRowData[2] == "" and noRowData[7] != "":
                 Signal_name = noRowData[7]
-                Signal_start_bit = int(noRowData[10])
-                Signal_length = int(noRowData[13])
-                Factor = float(noRowData[15])
-                Offset = float(noRowData[16])
-                Real_min_value = float(noRowData[17])
-                Real_max_value = float(noRowData[18])
+                Signal_name = re.sub(r'\W','',Signal_name)
+                try:             
+                    Signal_start_bit = int(noRowData[10])
+                    Signal_length = int(noRowData[13])
+                    raise ValueError("Signal segment Error!")
+                except:
+                    Signal_start_bit = 0
+                    Signal_length = 0
+                    print(Signal_name+": start_bit and length Error!...default")
+                try:
+                    Factor = str(noRowData[15])
+                    Factor = strfra2double(Factor)
+                    Offset = str(noRowData[16])
+                    Offset = strfra2double(Offset)
+                except:
+                    Factor = 1.0
+                    Offset = 0.0
+                    print(Signal_name+": Factor Offset Error!...default")
+                try:
+                    Real_min_value = float((noRowData[17]))
+                    Real_max_value = float((noRowData[18]))
+                except:
+                    Real_min_value = 0.00
+                    Real_max_value = 16.00
+                    print(Signal_name+": min_val and max_val Error!...default")
                 Unit = noRowData[25]
                 #SG_ Create
                 newContext = spaStr +"SG_" + spaStr + Signal_name + spaStr +":"+ spaStr + str(Signal_start_bit) +"|"+\
@@ -210,7 +252,7 @@ def excel2dbc(fin,sheet_name):
                 print("newContext" + newContext)
                 fdbc.write(newContext)
         except:
-            print(" Get Signal Info Error!")
+            print(Signal_name+": Get Signal Info Error!")
         noRow+=1
 
     newContext="\n"
@@ -239,7 +281,8 @@ def excel2dbc(fin,sheet_name):
         if noRowData[7] != "":
             try:
                 Signal_name = noRowData[7]
-                Signal_detail = noRowData[8]
+                Signal_name = re.sub(r'\W','',Signal_name)  
+                Signal_detail = noRowData[8][0:254]
                 newContext ="CM_ "+"SG_ "+str(intID)+spaStr+Signal_name+spaStr+"\""+Signal_detail+"\";"+"\n"
                 print("newContext" + newContext)
                 fdbc.write(newContext)
@@ -344,7 +387,7 @@ def excel2dbc(fin,sheet_name):
     fdbc.write(newContext)
 
     ##################BA_############################
-    newContext="BA_ \"DBName\" \"通讯矩阵- 赢彻B1-I-CAN0724\";\n\
+    newContext="BA_ \"DBName\" \""+fout+"\";\n\
     BA_ \"BusType\" \"J1939\";\n"
     fdbc.write(newContext)
 
@@ -359,26 +402,37 @@ def excel2dbc(fin,sheet_name):
 
         if noRowData[2] != "":
             try:
+                Message_name = noRowData[0]
+                Message_name = re.sub(r'\W','',Message_name) 
                 chID = noRowData[2] #第三列为MessageID
                 intID = int(chID,16)+int('0x80000000',16) #？？？？？没懂为啥有一位置1了，但dbc文件里实际置了1
-                Cycle_time = int(noRowData[5])
-                Message_name = noRowData[0]
+                try:
+                    Cycle_time = int(noRowData[5])
+                except:
+                    Cycle_time = 1000
+                    print(Message_name+": Cycle Time Definition Error!...default to 1000s")
 
                 newContext ="BA_ " +"\"GenMsgCycleTime\"" +"BO_ "+str(intID) +spaStr +str(Cycle_time) +";\n"
                 print("newContext"+newContext)
                 fdbc.write(newContext)
             except:
-                print(Message_name+"Cycle Time Error!")
+                print("Message cycle time default!")
 
         try:
             if noRowData[7] != "" and int(noRowData[11]) != 0:
-                SPN = int(noRowData[11])
-                Signal_name = noRowData[7]  
+                Signal_name = noRowData[7]
+                Signal_name = re.sub(r'\W','',Signal_name) 
+                try:
+                    SPN = int(noRowData[11])
+                except:
+                    SPN = 0
+                    print(Signal_name+": SPN Definition Error!...default")
+
                 newContext = "BA_ "+"\"SPN\""+ spaStr + "SG_ "+ str(intID) + spaStr + Signal_name + spaStr + str(SPN)+";\n"
                 print("newContext" + newContext)
                 fdbc.write(newContext)
         except:
-            print(noRowData[7]+"SPN Error!")
+            print(Signal_name+": SPN default!")
         noRow+=1
 
     newContext="\n"
@@ -402,24 +456,29 @@ def excel2dbc(fin,sheet_name):
         try:
             if noRowData[7] != "" and noRowData[26] != "":
                 Signal_name = noRowData[7]
+                Signal_name = re.sub(r'\W','',Signal_name) 
+                  
                 line = noRowData[26]
                 line = re.sub(r' ','',line)
                 list1 = re.split(r'[:,=,\n]',line)
 
                 val_str = ""
-                i = 0
-                while i < len(list1):
-                    if i%2 == 0:
-                        val_str += (str(int(list1[i],16))+' ')
-                    else:
-                        val_str += ("\"" +str(list1[i]) +"\"" +' ')
-                    i +=1
+                try:
+                    i = 0
+                    while i < len(list1):
+                        if i%2 == 0:
+                            val_str += (str(int(list1[i],16))+' ')
+                        else:
+                            val_str += ("\"" +str(list1[i]) +"\"" +' ')
+                        i +=1
+                except:
+                    print(Signal_name+": Value Definition Error!...default")
 
                 newContext ="VAL_ "+str(intID)+spaStr+Signal_name+spaStr+val_str+";\n"
                 print("newContext" + newContext)
                 fdbc.write(newContext)
         except:
-            print(Signal_name+"Value Definition Error!")
+            print(Signal_name+": Value default!")
         noRow+=1
 
     newContext="\n"

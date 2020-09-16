@@ -30,6 +30,7 @@ def excel2dbc_button():
     write_log_to_Text(sheet_table)
 
     out = srcDF2dbc.excel2dbc(fin[0], select_sheet_table[0])
+
     write_log_to_Text("build "+out +"completed")
 
 #功能函数

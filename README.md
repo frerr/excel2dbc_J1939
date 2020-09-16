@@ -3,10 +3,13 @@
 
 Inceptio自用DF excel格式转dbc，只针对DF excel模板，生成对应J1939 CAN DBC文件
 
-**使用说明**
+**版本说明**
 
-- 将待转换的.xlsx文件与.exe放在同一目录下，注意：仅可放一个excel文件
-- 点击.exe，即可自动生成.dbc
+- v1：
+
+  - 初版释放
+
+  - 报错信息处理待完善
 
 **EXCEL格式要求**
 
@@ -24,3 +27,6 @@ Inceptio自用DF excel格式转dbc，只针对DF excel模板，生成对应J1939
   0x3:Not available
 
   其中“：”可替代成“=”，空格或换行符不敏感
+  
+- **重要4**：每一个sheet里，Message cycle time只可出现数值，如“200”
+
