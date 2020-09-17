@@ -7,6 +7,7 @@ from tkinter import filedialog
 import time
 import re
 import xlrd
+import os
 
 import srcDF2dbc
 
@@ -16,6 +17,19 @@ fin = []
 sheet_table = []
 select_sheet_table = []
 
+sub_info = '''
+Version: 0.1.0
+Author: Wu Bing
+Contact: bing.wu@inceptio.ai
+'''
+#初始化
+def init1():
+    try:
+        os.mkdir("dbc")
+        os.mkdir("log")
+    except:
+        print("init dir...")
+    print(sub_info)
 
 #日志动态打印
 def write_log_to_Text(logmsg):
@@ -102,5 +116,5 @@ try:
 except:
     print("comboxlist Error")
 
-
+init1()
 win.mainloop()          #父窗口进入事件循环，可以理解为保持窗口运行，否则界面不展示
