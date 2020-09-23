@@ -38,8 +38,18 @@
 import xlrd
 import re
 import glob
+import time
 from fractions import Fraction
 import sys
+
+#获取当前时间
+def get_time():
+    cur_time = time.strftime('%Y-%m-%d',time.localtime(time.time()))
+    return cur_time
+
+def get_current_time(self):
+    current_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+    return current_time
 
 def strfra2double(str):
     if '/' in str:
@@ -51,39 +61,27 @@ def strfra2double(str):
         return float(str)
 
 def excel2dbc(fin,sheet_name):
-    #################################################
     fout = 'Defalt_out.dbc'
-
     #################################################
     #                    Read DF-EXCEL              #
     #################################################
     try:
-        f=open("log"+"/"+'log.txt','w')
-        old=sys.stdout #将当前系统输出储存到临时变量
+        cur_time = get_time()
+        log_name = "log"+"/"+"log_"+re.sub(r'/W','_',cur_time)+".txt"
+        f=open(log_name,'w',encoding="utf8")
+        old=sys.stdout 
         sys.stdout=f   #输出重定向到文件
     except:
         print("LOG create Error")
+
     try:
         data = xlrd.open_workbook(fin)
-
         # 通过index获得工作表info
         table = data.sheet_by_name(sheet_name)
-
         fout = sheet_name + "_DBC_Inceptio_Out.dbc"
 
         print(sheet_name+" 总行数：" + str(table.nrows))
         print(sheet_name+ "总列数：" + str(table.ncols))
-
-        # 获取整行的值 和整列的值，返回的结果为数组
-        # 整行值：table.row_values(start,end)
-        # 整列值：table.col_values(start,end)
-        # 参数 start 为从第几个开始打印，
-        # end为打印到那个位置结束，默认为none
-        # print("整行值：" + str(table.row_values(0)))
-        # print("整列值：" + str(table.col_values(9)))
-
-        # rowvalue = table.row_values(4)
-        # print(rowvalue)
     except:
         print("Open "+sheet_name +" Error!")
     else:
@@ -93,7 +91,7 @@ def excel2dbc(fin,sheet_name):
     #                    Write dbc                  #
     #################################################
     try:
-       fdbc = open("dbc"+"/"+fout,"w+")
+       fdbc = open("dbc"+"/"+fout,"w+",encoding="utf8")
     except:
         print("Create "+fout +" Error!")
     else:
@@ -158,6 +156,7 @@ def excel2dbc(fin,sheet_name):
         print("Read Node Name Error!")
     else:
         print("Read Node Name Successfully!")
+        
     ################BO_报文###########################
     print("print noRow "+str(table.nrows))
     noRow = 2
@@ -494,10 +493,11 @@ def excel2dbc(fin,sheet_name):
 
     newContext="\n"
     fdbc.write(newContext)
+
     try:
         sys.stdout=old     #还原系统输出
         f.close()
-    except:
+    except IOError:
         print("LOG close Error!")
 
     return fout
