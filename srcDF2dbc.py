@@ -41,6 +41,23 @@ import glob
 import time
 from fractions import Fraction
 import sys
+import logging
+import logging.handlers
+import datetime
+
+#logging config
+logger = logging.getLogger('log'+'/'+'mylogger')
+logger.setLevel(logging.DEBUG)
+
+rf_handler = logging.FileHandler('log'+'/'+'all.log')
+rf_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+
+f_handler = logging.FileHandler('log'+'/'+'error.log')
+f_handler.setLevel(logging.ERROR)
+f_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(filename)s[:%(lineno)d] - %(message)s"))
+
+logger.addHandler(rf_handler)
+logger.addHandler(f_handler)
 
 #获取当前时间
 def get_time():
@@ -66,26 +83,17 @@ def excel2dbc(fin,sheet_name):
     #                    Read DF-EXCEL              #
     #################################################
     try:
-        cur_time = get_time()
-        log_name = "log"+"/"+"log_"+re.sub(r'/W','_',cur_time)+".txt"
-        f=open(log_name,'w',encoding="utf8")
-        old=sys.stdout 
-        sys.stdout=f   #输出重定向到文件
-    except:
-        print("LOG create Error")
-
-    try:
         data = xlrd.open_workbook(fin)
         # 通过index获得工作表info
         table = data.sheet_by_name(sheet_name)
         fout = sheet_name + "_DBC_Inceptio_Out.dbc"
 
-        print(sheet_name+" 总行数：" + str(table.nrows))
-        print(sheet_name+ "总列数：" + str(table.ncols))
+        logger.info(sheet_name+" 总行数：" + str(table.nrows))
+        logger.info(sheet_name+ "总列数：" + str(table.ncols))
     except:
-        print("Open "+sheet_name +" Error!")
+        logger.critical("Open "+sheet_name +" Error!")
     else:
-        print("Open "+sheet_name +" Successfully!")
+        logger.info("Open "+sheet_name +" Successfully!")
 
     #################################################
     #                    Write dbc                  #
@@ -93,9 +101,9 @@ def excel2dbc(fin,sheet_name):
     try:
        fdbc = open("dbc"+"/"+fout,"w+",encoding="utf8")
     except:
-        print("Create "+fout +" Error!")
+        logger.critical("Create "+fout +" Error!")
     else:
-        print("Create "+fout +" Successfully!")
+        logger.info("Create "+fout +" Successfully!")
 
     ############VERSION##############################
     newContext = "VERSION \"\"\n\n\n"
@@ -153,12 +161,12 @@ def excel2dbc(fin,sheet_name):
         newContext="\n\n"
         fdbc.write(newContext)
     except:
-        print("Read Node Name Error!")
+        logger.error("Read Node Name Error!")
     else:
-        print("Read Node Name Successfully!")
+        logger.info("Read Node Name Successfully!")
         
     ################BO_报文###########################
-    print("print noRow "+str(table.nrows))
+    logger.info("print noRow "+str(table.nrows))
     noRow = 2
     spaStr = " "
     chID = "" #MessageID
@@ -199,11 +207,11 @@ def excel2dbc(fin,sheet_name):
                     Send = "Vector_XXX"
                     Rev = "Vector_XXX"
         except ValueError:
-            print(noRowData[0]+": Rev and Send not matched...default")
+            logger.error(noRowData[0]+": Rev and Send not matched...default")
         except:
-            print(noRowData[0]+": Node Rev/Send Error!")
+            logger.error(noRowData[0]+": Node Rev/Send Error!")
         else:
-            print("Read Rev/Send Relationship Successfully!")
+            logger.info("Read Rev/Send Relationship Successfully!")
 
         try:
             if noRowData[2] != "":
@@ -216,10 +224,10 @@ def excel2dbc(fin,sheet_name):
                 newContext="\n"
                 fdbc.write(newContext)
                 newContext = "BO_ " + str(intID) + spaStr + Message_name + ":" + spaStr + str(DLC) +spaStr +Send+ "\n"
-                print("newContext"+newContext)
+                logger.info("newContext"+newContext)
                 fdbc.write(newContext)
         except:
-            print(Message_name+"Get Message Info Error!")
+            logger.error(Message_name+"Get Message Info Error!")
 
         try:
             if noRowData[2] == "" and noRowData[7] != "":
@@ -229,7 +237,7 @@ def excel2dbc(fin,sheet_name):
                     Signal_start_bit = int(noRowData[10])
                     Signal_length = int(noRowData[13])
                 except:
-                    print(Signal_name+": start_bit and length Very Bad Error!!!!!!!!...")
+                    logger.error(Signal_name+": start_bit and length Very Bad Error!!!!!!!!...")
                 try:
                     Factor = str(noRowData[15])
                     Factor = strfra2double(Factor)
@@ -238,28 +246,28 @@ def excel2dbc(fin,sheet_name):
                 except:
                     Factor = 1.0
                     Offset = 0.0
-                    print(Signal_name+": Factor Offset Error!...default")
+                    logger.warning(Signal_name+": Factor Offset Error!...default")
                 try:
                     Real_min_value = float((noRowData[17]))
                     Real_max_value = float((noRowData[18]))
                 except:
                     Real_min_value = 0.00
                     Real_max_value = 16.00
-                    print(Signal_name+": min_val and max_val Error!...default")
+                    logger.warning(Signal_name+": min_val and max_val Error!...default")
                 try:
                     Unit = str(noRowData[25])
                 except:
                     Unit = ""
-                    print(Signal_name+ ": unit definition Error!")
+                    logger.warning(Signal_name+ ": unit definition Error!")
                 #SG_ Create
                 newContext = spaStr +"SG_" + spaStr + Signal_name + spaStr +":"+ spaStr + str(Signal_start_bit) +"|"+\
                         str(Signal_length) +"@"+ str(Byte_Order) + str(Value_type) + spaStr +"("+\
                         str(Factor) +","+str(Offset) +")"+spaStr+"["+str(Real_min_value) +"|"+str(Real_max_value) +"]"+ \
                         spaStr + spaStr +"\""+Unit+"\"" +spaStr + Rev+ "\n"
-                print("newContext" + newContext)
+                logger.info("newContext" + newContext)
                 fdbc.write(newContext)
         except:
-            print(Signal_name+": Get Signal Info Error!")
+            logger.warning(Signal_name+": Get Signal Info Error!")
         noRow+=1
 
     newContext="\n"
@@ -292,10 +300,10 @@ def excel2dbc(fin,sheet_name):
                 Signal_detail = re.sub(r'\W','_',noRowData[8][0:254])
                 if Signal_detail != "":
                     newContext ="CM_ "+"SG_ "+str(intID)+spaStr+Signal_name+spaStr+"\""+Signal_detail+"\";"+"\n"
-                    print("newContext" + newContext)
+                    logger.info("newContext" + newContext)
                     fdbc.write(newContext)
             except:
-                print(Signal_name+" Get Signal Description Error!")
+                logger.warning(Signal_name+" Get Signal Description Error!")
         noRow+=1
 
     newContext="\n"
@@ -418,13 +426,13 @@ def excel2dbc(fin,sheet_name):
                     Cycle_time = int(noRowData[5])
                 except:
                     Cycle_time = 1000
-                    print(Message_name+": Cycle Time Definition Error!...default to 1000s")
+                    logger.error(Message_name+": Cycle Time Definition Error!...default to 1000s")
 
                 newContext ="BA_ " +"\"GenMsgCycleTime\"" +"BO_ "+str(intID) +spaStr +str(Cycle_time) +";\n"
-                print("newContext"+newContext)
+                logger.info("newContext"+newContext)
                 fdbc.write(newContext)
             except:
-                print("Message cycle time default!")
+                logger.info("Message cycle time to default!")
 
         try:
             if noRowData[7] != "" and int(noRowData[11]) != 0:
@@ -434,14 +442,14 @@ def excel2dbc(fin,sheet_name):
                     SPN = int(noRowData[11])
                 except:
                     SPN = 0
-                    print(Signal_name+": SPN Definition Error!...default")
+                    logger.warning(Signal_name+": SPN Definition Error!...default")
 
                 if SPN != 0:
                     newContext = "BA_ "+"\"SPN\""+ spaStr + "SG_ "+ str(intID) + spaStr + Signal_name + spaStr + str(SPN)+";\n"
-                    print("newContext" + newContext)
+                    logger.info("newContext" + newContext)
                     fdbc.write(newContext)
         except:
-            print(Signal_name+": SPN default!")
+            logger.info(Signal_name+": SPN default!")
         noRow+=1
 
     newContext="\n"
@@ -481,23 +489,17 @@ def excel2dbc(fin,sheet_name):
                             val_str += ("\"" +re.sub(r'\W','_',str(list1[i])) +"\"" +' ')
                         i +=1
                 except:
-                    print(Signal_name+": Value Definition Error!...default")
+                    logger.error(Signal_name+": Value Definition Error!...default")
 
                 if val_str != "" :
                     newContext ="VAL_ "+str(intID)+spaStr+Signal_name+spaStr+val_str+";\n"
-                    print("newContext" + newContext)
+                    logger.info("newContext" + newContext)
                     fdbc.write(newContext)
         except:
-            print(Signal_name+": Value default!")
+            logger.info(Signal_name+": Value default!")
         noRow+=1
 
     newContext="\n"
     fdbc.write(newContext)
-
-    try:
-        sys.stdout=old     #还原系统输出
-        f.close()
-    except IOError:
-        print("LOG close Error!")
 
     return fout

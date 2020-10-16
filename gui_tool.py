@@ -17,7 +17,7 @@ sheet_table = []
 select_sheet_table = []
 
 sub_info = '''
-Version: 0.1.1
+Version: 0.1.2
 Author: Wu Bing
 Contact: bing.wu@inceptio.ai
 '''
