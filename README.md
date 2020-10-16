@@ -5,6 +5,10 @@ Inceptio自用DF excel格式转dbc，只针对DF excel模板，生成对应J1939
 
 **版本说明**
 
+- 版本：0.1.2，20201016
+
+- 更新点：add logging
+
 - 版本：0.1.1，20200923
 
 - 更新点：fixed .dbc encoding to utf-8
