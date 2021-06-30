@@ -1,7 +1,7 @@
 # excel2dbc-py
 **简介**
 
-Inceptio自用DF excel格式转dbc，只针对DF excel模板，生成对应J1939 CAN DBC文件
+excel格式转dbc，生成对应J1939 CAN DBC文件
 
 **版本说明**
 
